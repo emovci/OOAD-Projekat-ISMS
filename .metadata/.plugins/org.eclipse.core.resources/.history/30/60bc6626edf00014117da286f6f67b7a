@@ -19,12 +19,6 @@ public class proba
 			else
 					System.out.println("Nije uspjelo");
 			
-			try {
-				Datum pr= new Datum (32, 12 , 2011, 23, 23);
-			} catch (InterruptedException e) {
-				System.out.println("uspjelo!");
-			}
-			
 			int[][] broj= new int[10][];
 			for(int i=0; i<10; i++)
 			{
@@ -45,8 +39,6 @@ public class proba
 					System.out.println("Random broj "+j+" je "+Math.random());
 			}
 			ulaz.close();
-			
-			System.out.println("možda");
 		}
 		
 		

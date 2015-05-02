@@ -22,7 +22,7 @@ public class proba
 			try {
 				Datum pr= new Datum (32, 12 , 2011, 23, 23);
 			} catch (InterruptedException e) {
-				System.out.println("uspjelo!");
+				System.out.println("uspjelo");
 			}
 			
 			int[][] broj= new int[10][];

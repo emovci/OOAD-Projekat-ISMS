@@ -1,0 +1,5 @@
+
+public class bool 
+{
+	public int istinitosna_vrijednost;
+}
