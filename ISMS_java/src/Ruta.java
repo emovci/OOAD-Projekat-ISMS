@@ -70,7 +70,7 @@ public class Ruta {
 				throw new UnsupportedOperationException();
 		}
 	
-		public string get_komentar() 
+		public String get_komentar() 
 		{
 				throw new UnsupportedOperationException();
 		}
