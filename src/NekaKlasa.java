@@ -6,7 +6,7 @@ public class NekaKlasa {
 	
 	public static void main (String[] args){
 		
-		System.out.println("Cao cao ");
+		System.out.println("Ðes Sudo  ");
 		
 	}
 	
