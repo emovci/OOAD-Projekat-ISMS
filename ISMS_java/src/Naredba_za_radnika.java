@@ -1,48 +1,69 @@
+import java.util.Vector;
+
 public class Naredba_za_radnika {
 
-	private Roba[] roba_za_premještanje;
-	private Datum vrijeme_za_premještatnje;
-	private boolean naredba_prihvaæena;
-	private boolean naredba_izvršena;
+	private Vector<Roba> roba_za_premjestanje;
+	private Datum vrijeme_za_premjestanje;
+	private boolean naredba_prihvacena;
+	private boolean naredba_izvrsena;
 
+	public Naredba_za_radnika(Vector<Roba> roba, Datum vrijeme, boolean prihvacena, boolean izvrsena){
+		this.roba_za_premjestanje=roba;
+		this.vrijeme_za_premjestanje=vrijeme;
+		this.naredba_prihvacena=prihvacena;
+		this.naredba_izvrsena=izvrsena;
+	}
 	
-	public void set_naredba_prihvaæena(boolean prihvacenost) {
-		throw new UnsupportedOperationException();
+	public Naredba_za_radnika(Vector<Roba> roba, Datum vrijeme, boolean prihvacena){
+		this.roba_za_premjestanje=roba;
+		this.vrijeme_za_premjestanje=vrijeme;
+		this.naredba_prihvacena=prihvacena;
+		this.naredba_izvrsena=false;
+	}
+	
+	public Naredba_za_radnika(Vector<Roba> roba, Datum vrijeme){
+		this.roba_za_premjestanje=roba;
+		this.vrijeme_za_premjestanje=vrijeme;
+		this.naredba_prihvacena=false;
+		this.naredba_izvrsena=false;
+	}
+	
+	public void set_naredba_prihvacena(boolean prihvacenost) {
+		this.naredba_prihvacena=prihvacenost;
 	}
 
+	public void set_naredba_izvrsena(boolean zavrsenost) {
+		this.naredba_izvrsena=zavrsenost;
+	}
+
+
+	public void set_roba_za_premjestanje(Vector<Roba> roba) {
+		this.roba_za_premjestanje=roba; 
+	}
+	
 	public boolean get_naredba_prihvacena() {
-		throw new UnsupportedOperationException();
+		return this.naredba_prihvacena;
 	}
-
-
-	public void set_naredba_zavšena(boolean zavrsenost) {
-		throw new UnsupportedOperationException();
-	}
-
-	public boolean get_naredba_zavsena() {
-		throw new UnsupportedOperationException();
+	
+	public boolean get_naredba_izvrsena() {
+		return this.naredba_izvrsena;
 	}
 
 	public Datum get_vrijeme_za_premjestanje() {
-		throw new UnsupportedOperationException();
+		return this.vrijeme_za_premjestanje;
 	}
 
-	public Roba[] get_roba_za_premjestanje() {
-		throw new UnsupportedOperationException();
+	public Vector<Roba> get_roba_za_premjestanje() {
+		return this.roba_za_premjestanje;
 	}
 
-	public void set_roba_za_premještanje(Roba[] roba) {
-		throw new UnsupportedOperationException();
-	}
-
-	
 	public void dodaj_robu(Roba roba) {
-		throw new UnsupportedOperationException();
+		this.roba_za_premjestanje.addElement(roba);
 	}
 
 	
 	public void uklonu_robu(int red_br_robe) {
-		throw new UnsupportedOperationException();
+		this.roba_za_premjestanje.remove(red_br_robe);
 	}
 
 	public double cijena_naredbe() {

@@ -5,25 +5,23 @@ public class Generalisani_radnik extends Osoba {
 	private double plata_dnevnica;
 
 	public boolean get_status() {
-		throw new UnsupportedOperationException();
+		return this.status;
 	}
 
-	
 	public void set_status(boolean status) {
-		throw new UnsupportedOperationException();
+		this.status=status;
+	}
+	
+	public void set_plata_dnevnica(double plata) {
+		this.plata_dnevnica=plata;
 	}
 
 	public double get_plata_dnevnica() {
-		throw new UnsupportedOperationException();
-	}
-
-	
-	public void set_plata_dnevnica(double plata) {
-		throw new UnsupportedOperationException();
+		return this.plata_dnevnica;
 	}
 
 	public int get_id() {
-		throw new UnsupportedOperationException();
+		return this.id;
 	}
 
 }
