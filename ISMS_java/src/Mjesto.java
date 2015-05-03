@@ -6,7 +6,7 @@ public class Mjesto {
 	private String naziv;
 	//stavio sam static pošto bi usuprotnom dodavanjem novih gradova morali da mjenjamo svakog pripadnika
 	//klase što nije pametno. Ovako æe svi dijeli isti vektor i kad promjenimo na jednom, promjenit æemo na svakom.
-	//moramo samo osmislit kako æe biti organizovan ovaj vektor. Možda kao vektor ureðenih trojki??
+	//moramo samo osmislit kako æe biti organizovan ovaj vektor. Možda kao vektor ureðenih trojki?? Napravio sam prototip u proba klasi
 	private static Vector <Vector <Double>> lista_udaljenosti= new Vector <Vector <Double>> ();
 	private int redni_broj;
 	private static int ukupni_broj; 
