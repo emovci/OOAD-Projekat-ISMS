@@ -25,12 +25,12 @@ public class Ruta {
 		public Roba[] get_lista_robe()
 		{
 				throw new UnsupportedOperationException();
-		}
+		}       
 	
 		public void set_lista_robe(Roba[] roba) 
 		{
 				throw new UnsupportedOperationException();
-		}
+		}  
 
 		public void dodaj_robu(Roba roba)
 		{
