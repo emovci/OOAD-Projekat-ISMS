@@ -4,7 +4,7 @@ public class Ruta {
 		private Mjesto ciljno_mjesto;
 		private Roba[] lista_robe;
 		private Datum vrijeme_polaska;
-		private Datum vrijeme_dolaska;
+		private Datum vrijeme_dolaska; 
 		private boolean kupovina_ili_prodaja;
 		private boolean ruta_završena;
 		private String komentar;
