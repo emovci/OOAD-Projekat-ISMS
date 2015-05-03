@@ -1,12 +1,14 @@
+import java.util.Vector;
+
 
 public class Mjesto {
 	
 	private String naziv;
-	private double[] lista_udaljenosti;
+	private Vector<Double> lista_udaljenosti;
 	private int redni_broj;
 	private int ukupni_broj; 
 	
-	public Mjesto(String naziv,double[] lista_ud,int redni_br, int ukupni_br){
+	public Mjesto(String naziv,Vector<Double> lista_ud,int redni_br, int ukupni_br){
 		this.naziv=naziv;
 		this.lista_udaljenosti=lista_ud;
 		this.redni_broj=redni_br;
@@ -18,7 +20,7 @@ public class Mjesto {
 		this.naziv=naziv; 
 	}
 	
-	public void set_lista_udaljenosti(double[] lista_udaljenosti){
+	public void set_lista_udaljenosti(Vector<Double> lista_udaljenosti){
 		this.lista_udaljenosti=lista_udaljenosti;
 	}
 	
@@ -30,7 +32,7 @@ public class Mjesto {
 		return this.naziv;
 	}
 	
-	public double[] get_lista_udaljenosti(){
+	public Vector<Double> get_lista_udaljenosti(){
 		return this.lista_udaljenosti;
 	}
 	
