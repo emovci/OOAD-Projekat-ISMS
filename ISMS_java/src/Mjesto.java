@@ -15,7 +15,7 @@ public class Mjesto {
 	}
 	
 	public void set_naziv(String naziv){
-		this.naziv=naziv;
+		this.naziv=naziv; 
 	}
 	
 	public void set_lista_udaljenosti(double[] lista_udaljenosti){

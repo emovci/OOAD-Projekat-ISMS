@@ -7,7 +7,7 @@ public class proba
 			{
 					System.out.println("Broj "+ i);
 			
-			}
+			} 
 		}
 		public static void main(String[] args) 
 		{

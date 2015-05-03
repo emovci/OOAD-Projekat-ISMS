@@ -4,7 +4,7 @@ public class Datum
 	private int dan;
 	private int mjesec;
 	private int godina;
-	private int sati;
+	private int sati; 
 	private int minute;
 	
 	public Datum  (int dan, int mjesec, int godina, int sati, int minute) throws InterruptedException

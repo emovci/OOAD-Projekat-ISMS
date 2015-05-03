@@ -8,7 +8,7 @@ public class Roba {
 	public Roba(Vrsta_robe vrsta, double kolicina, double cijena){
 		this.vrsta_robe=vrsta;
 		this.kolicina=kolicina;
-		this.cijena=cijena;
+		this.cijena=cijena; 
 	}
 	
 	public void set_vrsta_robe(Vrsta_robe vrsta){
