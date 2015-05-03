@@ -5,7 +5,8 @@ public class Vrsta_robe {
 	private double masa;
 	private double volumen;
 	
-	public Vrsta_robe (String ime, double masa, double volumen){
+	public Vrsta_robe (String ime, double masa, double volumen) throws InterruptedException{
+		if(masa<0)  throw new InterruptedException();
 		this.ime=ime;
 		this.masa=masa;
 		this.volumen=volumen;
