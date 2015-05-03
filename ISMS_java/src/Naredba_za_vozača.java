@@ -1,17 +1,17 @@
 public class Naredba_za_vozaèa {
 
-	private boolean naredba_izvršena;
-	private boolean naredba_prihvaæena;
+	private Ruta[] rute;
 	private Datum vrijeme_polaska;
 	private Datum vrijeme_dolaska;
-	private Ruta[] rute;
-
+	private boolean naredba_prihvacena;
+	private boolean naredba_izvrsena;
 	
-	public void set_naredba_prihvaæena(boolean prihvaæenost) {
+	
+	public void set_naredba_prihvaæena(boolean prihvacenost) {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean get_naredba_prihvaæena() {
+	public boolean get_naredba_prihvacena() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -43,15 +43,15 @@ public class Naredba_za_vozaèa {
 	}
 
 
-	public void set_neke_rute_završene(int[] broj_ruta) {
+	public void set_neke_rute_zavrsene(int[] broj_ruta) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void set_naredba_zavšena(boolean završenost) {
+	public void set_naredba_zavrsena(boolean završenost) {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean get_naredba_zavšena() {
+	public boolean get_naredba_zavrsena() {
 		throw new UnsupportedOperationException();
 	}
 

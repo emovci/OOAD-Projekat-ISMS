@@ -8,7 +8,7 @@ public class Ruta {
 		private Datum vrijeme_polaska;
 		private Datum vrijeme_dolaska; 
 		private boolean kupovina_ili_prodaja;
-		private boolean ruta_završena;
+		private boolean ruta_zavrsena;
 		private String komentar;
 		private double cijena_rute;
 		
@@ -62,12 +62,12 @@ public class Ruta {
 				throw new UnsupportedOperationException();
 		}
 	
-		public boolean get_ruta_završena() 
+		public boolean get_ruta_zavrsena() 
 		{
 				throw new UnsupportedOperationException();
 		}
 	
-		public boolean set_ruta_završena(boolean završenost) 
+		public boolean set_ruta_zavrsena(boolean završenost) 
 		{
 				throw new UnsupportedOperationException();
 		}
