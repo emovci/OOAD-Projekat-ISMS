@@ -9,7 +9,7 @@ public class Naredba_za_radnika {
 	 * 
 	 * @param prihvaæenost
 	 */
-	public void set_naredba_prihvaæena(bool prihvaæenost) {
+	public void set_naredba_prihvaæena(boolean prihvaæenost) {
 		// TODO - implement {class}.{operation}
 		throw new UnsupportedOperationException();
 	}
@@ -23,7 +23,7 @@ public class Naredba_za_radnika {
 	 * 
 	 * @param završenost
 	 */
-	public void set_naredba_zavšena(bool završenost) {
+	public void set_naredba_zavšena(boolean završenost) {
 		// TODO - implement {class}.{operation}
 		throw new UnsupportedOperationException();
 	}

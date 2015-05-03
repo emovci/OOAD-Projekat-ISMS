@@ -14,7 +14,7 @@ public class Osoba {
 	 * 
 	 * @param ime
 	 */
-	public void set_Ime(string ime) {
+	public void set_Ime(String ime) {
 		// TODO - implement {class}.{operation}
 		throw new UnsupportedOperationException();
 	}
