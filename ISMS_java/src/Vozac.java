@@ -1,23 +1,36 @@
+import java.util.*;
 
 public class Vozac extends Generalisani_radnik {
 
-	private Naredba_za_vozaca[] trenutna_naredba;
+	private Vector <Naredba_za_vozaca> trenutna_naredba=new Vector <Naredba_za_vozaca> ();
 	private Kamion kamion;
 
-	public Naredba_za_vozaca[] get_trenutna_naredba() {
-		throw new UnsupportedOperationException();
+	public Vector <Naredba_za_vozaca> get_trenutna_naredba() 
+	{
+		return this.trenutna_naredba;
 	}
 
-	public void set_trenutna_naredba(Naredba_za_vozaca[] naredba) {
-		throw new UnsupportedOperationException();
+	public void set_trenutna_naredba(Vector <Naredba_za_vozaca> naredba) 
+	{
+		this.trenutna_naredba=naredba;
 	}
 
-	public Kamion get_kamion() {
-		throw new UnsupportedOperationException();
+	public Kamion get_kamion() 
+	{
+		return this.kamion;
 	}
 
-	public void set_kamion(Kamion kamion) {
-		throw new UnsupportedOperationException();
+	public void set_kamion(Kamion kamion) 
+	{
+		this.kamion=kamion;
+	}
+	public void dodaj_naredbu (Naredba_za_vozaca naredba)
+	{
+			this.trenutna_naredba.addElement(naredba);
+	}
+	public void ukloni_naredbu (int redni_broj)
+	{
+			this.trenutna_naredba.remove(redni_broj);
 	}
 
 }

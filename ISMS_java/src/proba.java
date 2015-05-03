@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.Vector;
+import java.util.ArrayList;
 public class proba
 {	
 		public static void sabiranje(int max)
@@ -11,6 +13,7 @@ public class proba
 		}
 		public static void main(String[] args) 
 		{
+			/*
 			int max=5;
 			sabiranje(max);
 			String s="Test";
@@ -46,7 +49,17 @@ public class proba
 			}
 			ulaz.close();
 			
-			System.out.println("možda");
+			System.out.println("možda");*/
+			//ArrayList<ArrayList<double> >  a;
+			//a.add(new ArrayList<double>(3));			
+			Vector <Vector <Double>> a= new Vector <Vector <Double>> ();
+			a.addElement(new Vector <Double> (3));
+			a.get(0).addElement(new Double (3));
+			a.get(0).addElement(new Double (1));
+			a.get(0).addElement(new Double (2));
+			a.get(0).get(1);
+			System.out.println("velièina vektora je: "+a.size()+", a oni brojevi su:  "+a.get(0).get(0)+a.get(0).get(1)+a.get(0).get(2));
+			
 		}
 		
 		

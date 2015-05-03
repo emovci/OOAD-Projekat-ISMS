@@ -29,3 +29,6 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/maven-metadata-models.xml
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/_remote.repositories
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/resolver-status.properties
