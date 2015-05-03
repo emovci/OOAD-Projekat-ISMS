@@ -1,15 +1,17 @@
+import java.util.Vector;
+
 public class Ruta {
 
 		private Mjesto startno_mjesto;
 		private Mjesto ciljno_mjesto;
-		private Roba[] lista_robe;
+		private Vector<Roba> lista_robe; //mislim da ce biti lakse raditi sa vektorom
 		private Datum vrijeme_polaska;
 		private Datum vrijeme_dolaska; 
 		private boolean kupovina_ili_prodaja;
 		private boolean ruta_završena;
 		private String komentar;
 		private double cijena_rute;
-
+		
 		public Mjesto get_startno_mjesto() 
 		{
 				throw new UnsupportedOperationException();
