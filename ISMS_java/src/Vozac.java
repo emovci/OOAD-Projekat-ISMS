@@ -7,22 +7,22 @@ public class Vozac extends Generalisani_radnik {
 
 	public Vector <Naredba_za_vozaca> get_trenutna_naredba() 
 	{
-		return this.trenutna_naredba;
+			return this.trenutna_naredba;
 	}
 
 	public void set_trenutna_naredba(Vector <Naredba_za_vozaca> naredba) 
 	{
-		this.trenutna_naredba=naredba;
+			this.trenutna_naredba=naredba;
 	}
 
 	public Kamion get_kamion() 
 	{
-		return this.kamion;
+			return this.kamion;
 	}
 
 	public void set_kamion(Kamion kamion) 
 	{
-		this.kamion=kamion;
+			this.kamion=kamion;
 	}
 	public void dodaj_naredbu (Naredba_za_vozaca naredba)
 	{
@@ -32,5 +32,4 @@ public class Vozac extends Generalisani_radnik {
 	{
 			this.trenutna_naredba.remove(redni_broj);
 	}
-
 }
