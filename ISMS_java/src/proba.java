@@ -59,7 +59,7 @@ public class proba
 			a.get(0).addElement(new Double (2));
 			a.get(0).get(1);
 			System.out.println("velièina vektora je: "+a.size()+", a oni brojevi su:  "+a.get(0).get(0)+a.get(0).get(1)+a.get(0).get(2));
-			
+			//Vector <Double> b= new Vector <Double> {1,2,3,4,5,6};
 		}
 		
 		
