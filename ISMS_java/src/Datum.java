@@ -22,6 +22,12 @@ public class Datum
 			this.sati=sati;
 			this.minute=minute;
 			
+			
+	}
+	
+	public String datum_string ()
+	{
+			return ""+dan+". "+mjesec+". "+godina+". "+sati+":"+minute;
 	}
 	
 

@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.Vector;
-import java.util.ArrayList;
 public class proba
 {	
 		public static void sabiranje(int max)
@@ -60,6 +58,15 @@ public class proba
 			a.get(0).get(1);
 			System.out.println("velièina vektora je: "+a.size()+", a oni brojevi su:  "+a.get(0).get(0)+a.get(0).get(1)+a.get(0).get(2));
 			//Vector <Double> b= new Vector <Double> {1,2,3,4,5,6};
+
+			try {
+				Datum g = new Datum (12,2,2011,12,12);
+				System.out.println(g.datum_string());
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			
 		}
 		
 		
