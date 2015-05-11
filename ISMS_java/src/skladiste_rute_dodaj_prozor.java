@@ -9,12 +9,15 @@ import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JTable;
 
 
 public class skladiste_rute_dodaj_prozor {
 
 	private JFrame frame;
 	private JTextField textField;
+	private JTable table;
+	private JTable table_1;
 
 	/**
 	 * Launch the application.
@@ -73,10 +76,6 @@ public class skladiste_rute_dodaj_prozor {
 		lblUnesiUdaljenostOd.setBounds(27, 123, 177, 14);
 		frame.getContentPane().add(lblUnesiUdaljenostOd);
 		
-		JList list = new JList();
-		list.setBounds(27, 160, 177, 80);
-		frame.getContentPane().add(list);
-		
 		JButton btnDodaj = new JButton("Dodaj");
 		btnDodaj.setBounds(27, 246, 177, 50);
 		frame.getContentPane().add(btnDodaj);
@@ -84,5 +83,13 @@ public class skladiste_rute_dodaj_prozor {
 		JButton btnOdustani = new JButton("Odustani");
 		btnOdustani.setBounds(27, 303, 177, 50);
 		frame.getContentPane().add(btnOdustani);
+		
+		table = new JTable();
+		table.setBounds(55, 181, 1, 1);
+		frame.getContentPane().add(table);
+		
+		table_1 = new JTable();
+		table_1.setBounds(27, 148, 169, 87);
+		frame.getContentPane().add(table_1);
 	}
 }

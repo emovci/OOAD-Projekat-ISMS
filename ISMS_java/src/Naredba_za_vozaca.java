@@ -56,10 +56,11 @@ public class Naredba_za_vozaca
 	}
 
 
-	public void set_neke_rute_zavrsene(int[] broj_ruta)
+	public void set_neke_rute_zavrsene(Vector <Integer> broj_ruta)
 	{
-			//treba razradit
-			throw new UnsupportedOperationException();
+			for(int i=0; i<broj_ruta.size(); i++)
+					this.rute.get(broj_ruta.get(i)).set_ruta_zavrsena(true);
+			//throw new UnsupportedOperationException();
 	}
 
 	public void set_naredba_zavrsena(boolean završenost) 
@@ -84,7 +85,12 @@ public class Naredba_za_vozaca
 
 	public double cijena_naredbe()
 	{
-			//treba razraditi
-		throw new UnsupportedOperationException();
+			double cijena=0;
+			for(int i=0; i< this.rute.size(); i++)
+			{
+				cijena=cijena +this.rute.get(i).get_cijena_rute();
+			}
+			return cijena;
+			//throw new UnsupportedOperationException();
 	}
 }

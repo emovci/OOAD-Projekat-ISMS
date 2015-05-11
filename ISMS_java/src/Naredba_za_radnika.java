@@ -80,7 +80,12 @@ public class Naredba_za_radnika {
 
 	public double cijena_naredbe() 
 	{
-			throw new UnsupportedOperationException();
+			double cijena=0;
+			for(int i=0; i< roba_za_premjestanje.size(); i++)
+			{
+				cijena=cijena + roba_za_premjestanje.get(i).get_cijena();
+			}
+			return cijena;
 	}
 
 }

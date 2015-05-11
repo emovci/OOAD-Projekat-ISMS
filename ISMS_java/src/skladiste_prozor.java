@@ -12,6 +12,8 @@ import java.util.Vector;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class skladiste_prozor {
@@ -64,6 +66,11 @@ public class skladiste_prozor {
 	    Object[][] cellData = { { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" }, { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" }  };
 	    String[] columnNames = { "col1", "col2" };
 		table = new JTable(cellData, columnNames);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			}
+		});
 		table.setBounds(37, 52, 226, 192);
 		frame.getContentPane().add(table); 
 		

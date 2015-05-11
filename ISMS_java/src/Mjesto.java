@@ -6,16 +6,28 @@ public class Mjesto {
 	private String naziv;
 	//stavio sam static pošto bi usuprotnom dodavanjem novih gradova morali da mjenjamo svakog pripadnika
 	//klase što nije pametno. Ovako æe svi dijeli isti vektor i kad promjenimo na jednom, promjenit æemo na svakom.
-	//moramo samo osmislit kako æe biti organizovan ovaj vektor. Možda kao vektor ureðenih trojki?? Napravio sam prototip u proba klasi
+	//moramo samo osmislit kako æe biti organizovan ovaj vektor. 
+	//vektor æe bit ureðen kao ureðena trojka, prva dva broja æe biti brojevi mjesta (uvijek manj borj prvi), a treæi je udaljenost
 	private static Vector <Vector <Double>> lista_udaljenosti= new Vector <Vector <Double>> ();
 	private int redni_broj;
-	private static int ukupni_broj; 
+	private static int ukupni_broj=0; 
 	
-	public Mjesto(String naziv,int redni_br, Vector <Vector <Double>> update)
+	public Mjesto(String naziv, Vector <Vector <Double>> update)
 	{
 			this.naziv=naziv;
-			//kasnije ovothis.lista_udaljenosti=lista_ud;
-			this.redni_broj=redni_br;
+			for(int i=0; i<update.size(); i++)
+			{
+					Vector <Double> temp=new Vector <Double> (update.get(i));
+					double prvi = temp.get(0);
+					int j=0;
+					while (lista_udaljenosti.get(j).get(0)>prvi)
+							j++;
+					int k=0;
+					while(lista_udaljenosti.get(j).get(k)>prvi)
+							k++;
+					lista_udaljenosti.insertElementAt(temp, i);
+			}
+			this.redni_broj=ukupni_broj;
 			ukupni_broj++;
 			//dodati izuzetke
 	}
