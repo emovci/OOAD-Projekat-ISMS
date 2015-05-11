@@ -41,5 +41,9 @@ public class Roba {
 	{
 			return this.cijena;
 	}
+	public String prikaz_robe ()
+	{
+			return ""+this.kolicina+" kg";
+	}
 	
 }

@@ -28,5 +28,9 @@ public class Generalisani_radnik extends Osoba {
 	{
 			return this.id;
 	}
+	public String prikaz_radnika ()
+	{
+			return this.get_ime()+" "+this.get_prezime()+" ("+this.id+")";
+	}
 
 }
