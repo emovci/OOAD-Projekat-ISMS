@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class supervizor_zaposli_prozor {
+public class Supervizor_zaposli_radnika {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -21,11 +22,11 @@ public class supervizor_zaposli_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizor_zaposli_prozor window = new supervizor_zaposli_prozor();
+					Supervizor_zaposli_radnika window = new Supervizor_zaposli_radnika();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +38,7 @@ public class supervizor_zaposli_prozor {
 	/**
 	 * Create the application.
 	 */
-	public supervizor_zaposli_prozor() {
+	public Supervizor_zaposli_radnika() {
 		initialize();
 	}
 
@@ -47,7 +48,7 @@ public class supervizor_zaposli_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 182, 436);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblIme = DefaultComponentFactory.getInstance().createLabel("Ime");

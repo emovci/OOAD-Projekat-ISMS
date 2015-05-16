@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,7 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 
-public class vozac_izbaci_rutu_prozor {
+public class Vozac_izbaci_rutu {
 
 	private JFrame frame;
 	private JTable table;
@@ -18,11 +19,11 @@ public class vozac_izbaci_rutu_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vozac_izbaci_rutu_prozor window = new vozac_izbaci_rutu_prozor();
+					Vozac_izbaci_rutu window = new Vozac_izbaci_rutu();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +35,7 @@ public class vozac_izbaci_rutu_prozor {
 	/**
 	 * Create the application.
 	 */
-	public vozac_izbaci_rutu_prozor() {
+	public Vozac_izbaci_rutu() {
 		initialize();
 	}
 
@@ -44,7 +45,7 @@ public class vozac_izbaci_rutu_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 300, 468);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblListaRuta = DefaultComponentFactory.getInstance().createLabel("Lista ruta");

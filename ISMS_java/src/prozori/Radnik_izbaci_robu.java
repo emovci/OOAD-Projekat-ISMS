@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class radnik_izbaci_robu_prozor {
+public class Radnik_izbaci_robu {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -20,11 +21,11 @@ public class radnik_izbaci_robu_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					radnik_izbaci_robu_prozor window = new radnik_izbaci_robu_prozor();
+					Radnik_izbaci_robu window = new Radnik_izbaci_robu();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +37,7 @@ public class radnik_izbaci_robu_prozor {
 	/**
 	 * Create the application.
 	 */
-	public radnik_izbaci_robu_prozor() {
+	public Radnik_izbaci_robu() {
 		initialize();
 	}
 
@@ -46,7 +47,7 @@ public class radnik_izbaci_robu_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 324, 470);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();

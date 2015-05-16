@@ -1,15 +1,19 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import javax.swing.JTable;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class supervizor_radmici_prozor {
+public class Supervizor_radmici {
 
 	private JFrame frame;
 	private JTable table;
@@ -17,11 +21,11 @@ public class supervizor_radmici_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizor_radmici_prozor window = new supervizor_radmici_prozor();
+					Supervizor_radmici window = new Supervizor_radmici();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +37,7 @@ public class supervizor_radmici_prozor {
 	/**
 	 * Create the application.
 	 */
-	public supervizor_radmici_prozor() {
+	public Supervizor_radmici() {
 		initialize();
 	}
 
@@ -43,7 +47,7 @@ public class supervizor_radmici_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 262, 378);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblSpisakRadnika = DefaultComponentFactory.getInstance().createLabel("Spisak radnika");
@@ -57,6 +61,8 @@ public class supervizor_radmici_prozor {
 		JButton btnNewButton = new JButton("Zaposli radnika");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Supervizor_zaposli_radnika np= new Supervizor_zaposli_radnika ();
+				np.novi_prozor();
 			}
 		});
 		btnNewButton.setBounds(26, 138, 200, 50);
@@ -67,6 +73,12 @@ public class supervizor_radmici_prozor {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnIzmjeniRadnika = new JButton("Izmjeni radnika");
+		btnIzmjeniRadnika.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Supervizor_izmjeni_radnika np= new Supervizor_izmjeni_radnika ();
+				np.novi_prozor();
+			}
+		});
 		btnIzmjeniRadnika.setBounds(26, 263, 200, 50);
 		frame.getContentPane().add(btnIzmjeniRadnika);
 	}

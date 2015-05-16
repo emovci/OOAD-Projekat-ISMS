@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -7,7 +8,7 @@ import javax.swing.JTable;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 
-public class skladiste_zaduzenja_vozaca_prozor {
+public class Skladiste_zaduzenja_vozaca {
 
 	private JFrame frame;
 	private JTable table;
@@ -15,11 +16,11 @@ public class skladiste_zaduzenja_vozaca_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					skladiste_zaduzenja_vozaca_prozor window = new skladiste_zaduzenja_vozaca_prozor();
+					Skladiste_zaduzenja_vozaca window = new Skladiste_zaduzenja_vozaca();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +32,7 @@ public class skladiste_zaduzenja_vozaca_prozor {
 	/**
 	 * Create the application.
 	 */
-	public skladiste_zaduzenja_vozaca_prozor() {
+	public Skladiste_zaduzenja_vozaca() {
 		initialize();
 	}
 
@@ -41,7 +42,7 @@ public class skladiste_zaduzenja_vozaca_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblTrenutnaZaduenjaVozaa = DefaultComponentFactory.getInstance().createLabel("Trenutna zadu\u017Eenja voza\u010Da");

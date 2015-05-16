@@ -1,4 +1,5 @@
 
+
 public class sta_treba_radit 
 {
 /*ova klasa služi èisto da ja (suad) mogu da znam šta nam je ostalo da se uradi

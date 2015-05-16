@@ -1,14 +1,15 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 
-public class supervizor_izmjeni_radnika {
+public class Supervizor_zaposli_vozac {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -19,11 +20,11 @@ public class supervizor_izmjeni_radnika {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizor_izmjeni_radnika window = new supervizor_izmjeni_radnika();
+					Supervizor_zaposli_vozac window = new Supervizor_zaposli_vozac();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +36,7 @@ public class supervizor_izmjeni_radnika {
 	/**
 	 * Create the application.
 	 */
-	public supervizor_izmjeni_radnika() {
+	public Supervizor_zaposli_vozac() {
 		initialize();
 	}
 
@@ -44,64 +45,68 @@ public class supervizor_izmjeni_radnika {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 216, 457);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(100, 100, 184, 432);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(24, 31, 147, 20);
+		textField.setBounds(10, 28, 147, 20);
 		frame.getContentPane().add(textField);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(24, 77, 147, 20);
+		textField_1.setBounds(10, 74, 147, 20);
 		frame.getContentPane().add(textField_1);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(24, 129, 28, 20);
+		comboBox.setBounds(10, 126, 28, 20);
 		frame.getContentPane().add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(72, 129, 28, 20);
+		comboBox_1.setBounds(58, 126, 28, 20);
 		frame.getContentPane().add(comboBox_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(118, 129, 47, 20);
+		comboBox_2.setBounds(104, 126, 47, 20);
 		frame.getContentPane().add(comboBox_2);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(24, 185, 147, 20);
+		textField_2.setBounds(10, 183, 147, 20);
 		frame.getContentPane().add(textField_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(24, 241, 147, 20);
+		textField_3.setBounds(10, 239, 147, 20);
 		frame.getContentPane().add(textField_3);
 		
-		JButton btnIzmjeni = new JButton("Izmjeni");
-		btnIzmjeni.setBounds(24, 279, 147, 50);
-		frame.getContentPane().add(btnIzmjeni);
+		JButton button = new JButton("Zaposli");
+		button.setBounds(10, 277, 147, 50);
+		frame.getContentPane().add(button);
 		
 		JButton button_1 = new JButton("Odustani");
-		button_1.setBounds(24, 340, 147, 50);
+		button_1.setBounds(10, 338, 147, 50);
 		frame.getContentPane().add(button_1);
 		
 		JLabel lblIme = DefaultComponentFactory.getInstance().createLabel("Ime");
-		lblIme.setBounds(24, 11, 92, 14);
+		lblIme.setBounds(10, -11, 200, 50);
 		frame.getContentPane().add(lblIme);
 		
 		JLabel lblPrezime = DefaultComponentFactory.getInstance().createLabel("Prezime");
-		lblPrezime.setBounds(24, 62, 92, 14);
+		lblPrezime.setBounds(10, 59, 92, 14);
 		frame.getContentPane().add(lblPrezime);
 		
 		JLabel lblDatumRoenja = DefaultComponentFactory.getInstance().createLabel("Datum ro\u0111enja");
-		lblDatumRoenja.setBounds(24, 160, 92, 14);
+		lblDatumRoenja.setBounds(10, 105, 92, 14);
 		frame.getContentPane().add(lblDatumRoenja);
 		
 		JLabel lblBrojTelefona = DefaultComponentFactory.getInstance().createLabel("Broj telefona");
-		lblBrojTelefona.setBounds(24, 216, 92, 14);
+		lblBrojTelefona.setBounds(10, 158, 92, 14);
 		frame.getContentPane().add(lblBrojTelefona);
+		
+		JLabel lblPlata = DefaultComponentFactory.getInstance().createLabel("Plata");
+		lblPlata.setBounds(10, 214, 92, 14);
+		frame.getContentPane().add(lblPlata);
 	}
 }

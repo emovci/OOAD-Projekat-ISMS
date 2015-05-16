@@ -1,15 +1,18 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class supervizor_klijenti_prozor {
+public class Supervizor_klijenti {
 
 	private JFrame frame;
 	private JTable table;
@@ -17,11 +20,11 @@ public class supervizor_klijenti_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizor_klijenti_prozor window = new supervizor_klijenti_prozor();
+					Supervizor_klijenti window = new Supervizor_klijenti();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +36,7 @@ public class supervizor_klijenti_prozor {
 	/**
 	 * Create the application.
 	 */
-	public supervizor_klijenti_prozor() {
+	public Supervizor_klijenti() {
 		initialize();
 	}
 
@@ -43,7 +46,7 @@ public class supervizor_klijenti_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 243, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		table = new JTable();
@@ -51,6 +54,12 @@ public class supervizor_klijenti_prozor {
 		frame.getContentPane().add(table);
 		
 		JButton btnDodajNovogKlijenta = new JButton("Dodaj novog klijenta");
+		btnDodajNovogKlijenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Supervizor_klijenti_dodaj np= new Supervizor_klijenti_dodaj ();
+				np.novi_prozor();
+			}
+		});
 		btnDodajNovogKlijenta.setBounds(10, 162, 204, 39);
 		frame.getContentPane().add(btnDodajNovogKlijenta);
 		

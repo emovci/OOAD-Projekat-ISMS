@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -6,7 +7,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JTable;
 
 
-public class skladiste_zaduzenja_prozor {
+public class Skladiste_zaduzenja {
 
 	private JFrame frame;
 	private JTable table;
@@ -15,11 +16,11 @@ public class skladiste_zaduzenja_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					skladiste_zaduzenja_prozor window = new skladiste_zaduzenja_prozor();
+					Skladiste_zaduzenja window = new Skladiste_zaduzenja();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +32,7 @@ public class skladiste_zaduzenja_prozor {
 	/**
 	 * Create the application.
 	 */
-	public skladiste_zaduzenja_prozor() {
+	public Skladiste_zaduzenja() {
 		initialize();
 	}
 
@@ -41,7 +42,7 @@ public class skladiste_zaduzenja_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 430, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblZaduenjaZaVozae = DefaultComponentFactory.getInstance().createLabel("Voza\u010Di");

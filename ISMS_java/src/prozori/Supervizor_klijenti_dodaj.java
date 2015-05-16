@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,7 +9,7 @@ import javax.swing.JTable;
 import javax.swing.JButton;
 
 
-public class supervizor_klijenti_dodaj_prozor {
+public class Supervizor_klijenti_dodaj {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -19,11 +20,11 @@ public class supervizor_klijenti_dodaj_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizor_klijenti_dodaj_prozor window = new supervizor_klijenti_dodaj_prozor();
+					Supervizor_klijenti_dodaj window = new Supervizor_klijenti_dodaj();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +36,7 @@ public class supervizor_klijenti_dodaj_prozor {
 	/**
 	 * Create the application.
 	 */
-	public supervizor_klijenti_dodaj_prozor() {
+	public Supervizor_klijenti_dodaj() {
 		initialize();
 	}
 
@@ -45,7 +46,7 @@ public class supervizor_klijenti_dodaj_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 193, 379);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblImeKlijenta = DefaultComponentFactory.getInstance().createLabel("Ime klijenta");

@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,7 +10,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 
 
-public class vozac_prozor {
+public class Vozac {
 
 	private JFrame frame;
 	private JTable table;
@@ -21,7 +22,7 @@ public class vozac_prozor {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vozac_prozor window = new vozac_prozor();
+					Vozac window = new Vozac();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +34,7 @@ public class vozac_prozor {
 	/**
 	 * Create the application.
 	 */
-	public vozac_prozor() {
+	public Vozac() {
 		initialize();
 	}
 

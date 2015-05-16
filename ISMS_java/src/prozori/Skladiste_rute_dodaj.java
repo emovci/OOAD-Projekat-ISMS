@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,7 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 
 
-public class skladiste_rute_dodaj_prozor {
+public class Skladiste_rute_dodaj {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -22,11 +23,11 @@ public class skladiste_rute_dodaj_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					skladiste_rute_dodaj_prozor window = new skladiste_rute_dodaj_prozor();
+					Skladiste_rute_dodaj window = new Skladiste_rute_dodaj();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +39,7 @@ public class skladiste_rute_dodaj_prozor {
 	/**
 	 * Create the application.
 	 */
-	public skladiste_rute_dodaj_prozor() {
+	public Skladiste_rute_dodaj() {
 		initialize();
 	}
 
@@ -48,7 +49,7 @@ public class skladiste_rute_dodaj_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 241, 401);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblSelektujUgovor = DefaultComponentFactory.getInstance().createLabel("Selektuj ugovor");

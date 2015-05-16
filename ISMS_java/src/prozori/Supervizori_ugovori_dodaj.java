@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,7 +9,7 @@ import javax.swing.JTable;
 import javax.swing.JButton;
 
 
-public class supervizori_ugovori_dodaj_prozor {
+public class Supervizori_ugovori_dodaj {
 
 	private JFrame frame;
 	private JTable table;
@@ -16,11 +17,11 @@ public class supervizori_ugovori_dodaj_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizori_ugovori_dodaj_prozor window = new supervizori_ugovori_dodaj_prozor();
+					Supervizori_ugovori_dodaj window = new Supervizori_ugovori_dodaj();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +33,7 @@ public class supervizori_ugovori_dodaj_prozor {
 	/**
 	 * Create the application.
 	 */
-	public supervizori_ugovori_dodaj_prozor() {
+	public Supervizori_ugovori_dodaj() {
 		initialize();
 	}
 
@@ -42,7 +43,7 @@ public class supervizori_ugovori_dodaj_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 182, 481);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblIzaberiKlijenta = DefaultComponentFactory.getInstance().createLabel("Izaberi klijenta");

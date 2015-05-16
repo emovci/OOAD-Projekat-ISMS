@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class skladiste_rute_prozor {
+public class Skladiste_rute {
 
 	private JFrame frame;
 	private JTable table;
@@ -17,11 +18,11 @@ public class skladiste_rute_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					skladiste_rute_prozor window = new skladiste_rute_prozor();
+					Skladiste_rute window = new Skladiste_rute();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +34,7 @@ public class skladiste_rute_prozor {
 	/**
 	 * Create the application.
 	 */
-	public skladiste_rute_prozor() {
+	public Skladiste_rute() {
 		initialize();
 	}
 
@@ -43,7 +44,7 @@ public class skladiste_rute_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 420, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblListaRuta = DefaultComponentFactory.getInstance().createLabel("Lista ruta");

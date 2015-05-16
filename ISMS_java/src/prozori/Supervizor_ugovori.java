@@ -1,15 +1,19 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import javax.swing.JTable;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class supervizor_ugovori_prozor {
+public class Supervizor_ugovori {
 
 	private JFrame frame;
 	private JTable table;
@@ -17,11 +21,11 @@ public class supervizor_ugovori_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					supervizor_ugovori_prozor window = new supervizor_ugovori_prozor();
+					Supervizor_ugovori window = new Supervizor_ugovori();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +37,7 @@ public class supervizor_ugovori_prozor {
 	/**
 	 * Create the application.
 	 */
-	public supervizor_ugovori_prozor() {
+	public Supervizor_ugovori() {
 		initialize();
 	}
 
@@ -43,7 +47,7 @@ public class supervizor_ugovori_prozor {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 243, 297);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblListaUgovora = DefaultComponentFactory.getInstance().createLabel("Lista ugovora");
@@ -55,6 +59,12 @@ public class supervizor_ugovori_prozor {
 		frame.getContentPane().add(table);
 		
 		JButton btnNewButton = new JButton("Dodaj novi ugovor");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Supervizori_ugovori_dodaj np= new Supervizori_ugovori_dodaj ();
+				np.novi_prozor();
+			}
+		});
 		btnNewButton.setBounds(10, 158, 204, 39);
 		frame.getContentPane().add(btnNewButton);
 		

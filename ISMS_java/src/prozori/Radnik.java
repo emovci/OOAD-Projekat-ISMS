@@ -1,17 +1,24 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JToggleButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class radnik_prozor {
+
+public class Radnik {
 
 	private JFrame frame;
 	private JTable table;
+	final static String LOOKANDFEEL="WINDOWS";
 
 	/**
 	 * Launch the application.
@@ -20,19 +27,19 @@ public class radnik_prozor {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					radnik_prozor window = new radnik_prozor();
+					Radnik window = new Radnik();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
+		});	
 	}
 
 	/**
 	 * Create the application.
 	 */
-	public radnik_prozor() {
+	public Radnik() {
 		initialize();
 	}
 
@@ -48,8 +55,15 @@ public class radnik_prozor {
 		table = new JTable();
 		table.setBounds(28, 120, 200, 123);
 		frame.getContentPane().add(table);
-		
+
 		JToggleButton tglbtnIzbaciRobuZa = new JToggleButton("Izbaci robu za premjestiti");
+		tglbtnIzbaciRobuZa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Pokušaj poruke");
+				Radnik_izbaci_robu np = new Radnik_izbaci_robu ();
+				np.novi_prozor();
+			}
+		});
 		tglbtnIzbaciRobuZa.setBounds(28, 252, 200, 50);
 		frame.getContentPane().add(tglbtnIzbaciRobuZa);
 		

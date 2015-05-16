@@ -1,3 +1,4 @@
+package prozori;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-public class skladiste_prozor {
+public class Skladiste {
 
 	private JFrame frame;
 	private JTable table;
@@ -34,7 +35,7 @@ public class skladiste_prozor {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					skladiste_prozor window = new skladiste_prozor();
+					Skladiste window = new Skladiste();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +47,7 @@ public class skladiste_prozor {
 	/**
 	 * Create the application.
 	 */
-	public skladiste_prozor() {
+	public Skladiste() {
 		initialize();
 	}
 
@@ -84,19 +85,30 @@ public class skladiste_prozor {
 		
 		btnNewButton_1 = new JButton("Prika\u017Ei trenutna zadu\u017Eenja voza\u010Da");
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Skladiste_zaduzenja_vozaca np= new Skladiste_zaduzenja_vozaca ();
+				np.novi_prozor();
 			}
 		});
 		btnNewButton_1.setBounds(273, 67, 197, 37);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		btnNewButton_2 = new JButton("Prika\u017Ei trenutna zadu\u017Eenja radnika");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Skladiste_zaduzenja_radnika np= new Skladiste_zaduzenja_radnika ();
+				np.novi_prozor();
+			}
+		});
 		btnNewButton_2.setBounds(273, 115, 197, 34);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		btnGeneriiNaredbe = new JButton("Generi\u0161i zadu\u017Eenja");
 		btnGeneriiNaredbe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Skladiste_zaduzenja np= new Skladiste_zaduzenja ();
+				np.novi_prozor();
 			}
 		});
 		btnGeneriiNaredbe.setBounds(273, 163, 197, 34);
@@ -105,6 +117,8 @@ public class skladiste_prozor {
 		btnPrikaiRute = new JButton("Uredi rute");
 		btnPrikaiRute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Skladiste_rute np= new Skladiste_rute ();
+				np.novi_prozor();
 			}
 		});
 		btnPrikaiRute.setBounds(273, 210, 197, 34);
