@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
@@ -86,16 +87,39 @@ public class Skladiste {
 	      columnNames.addElement("Ime 2");
 	      columnNames.addElement("Ime 3");
 	      columnNames.addElement("Ime 4");
-		table = new JTable(rowData, columnNames);
+		table = new JTable(rowData, columnNames)
+		{
+	        private static final long serialVersionUID = 1L;
+
+	        public boolean isCellEditable(int row, int column) 
+	        {                
+	                return false;               
+	        };
+	    };
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				if(arg0.getClickCount()==2)
+				{
+					int row = table.getSelectedRow();
+			        int col = table.getSelectedColumn();
+			        JOptionPane.showMessageDialog(null, "Broj reda: "+(row+1)+", broj kolone: "+(col+1));
+					
+				}
 			}
 		});
 		//table.setBounds(10, 52, 253, 237);
 		//frame.getContentPane().add(table); 
 		
 		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+			}
+		});
+
 		scrollPane.setBounds(10, 52, 526, 318);
 		frame.getContentPane().add(scrollPane);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);

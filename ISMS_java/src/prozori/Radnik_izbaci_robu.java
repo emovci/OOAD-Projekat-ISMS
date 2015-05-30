@@ -35,7 +35,7 @@ public class Radnik_izbaci_robu {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the application. 
 	 */
 	public Radnik_izbaci_robu() {
 		initialize();
