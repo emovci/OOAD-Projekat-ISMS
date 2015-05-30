@@ -1,5 +1,12 @@
 import java.util.*;
+import java.util.Arrays;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 public class proba
+
 {	
 		public static void sabiranje(int max)
 		{
@@ -67,6 +74,27 @@ public class proba
 				e.printStackTrace();
 			} 
 			
+			Vector< Vector <String>> rowData = new Vector<Vector<String>>();
+			Vector<String> temprow = new Vector<String>();
+			for (int i = 0; i < 4; i++) 
+		    {
+		    		temprow.addElement("123");
+		    }	
+		      //for (int j = 0; i < 4; i++)
+		      rowData.add(temprow);
+		      rowData.add(temprow);
+		    
+		    
+		    String[] columnNames = {"a","b","c","d"};
+		    
+		    Vector columnNamesV = new Vector(Arrays.asList(columnNames));
+
+		    JTable table = new JTable(rowData, columnNamesV);
+		    JFrame f = new JFrame();
+		    f.setSize(300, 300);
+		    f.add(new JScrollPane(table));
+		    f.setVisible(true);
+		  
 		}
 		
 		
