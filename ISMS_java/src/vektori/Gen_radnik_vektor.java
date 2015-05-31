@@ -4,7 +4,7 @@ import klase.Generalisani_radnik;
 
 public class Gen_radnik_vektor 
 {
-		private Vector <Generalisani_radnik> radnici;
+		private Vector <Generalisani_radnik> radnici=new Vector<Generalisani_radnik> ();
 		private int zadnji_id;
 		
 		public Vector <Generalisani_radnik> get_radnike ()
