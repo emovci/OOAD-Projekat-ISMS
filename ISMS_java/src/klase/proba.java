@@ -1,3 +1,4 @@
+package klase;
 import java.util.*;
 import java.util.Arrays;
 import java.util.Vector;
@@ -57,7 +58,12 @@ public class proba
 			System.out.println("možda");*/
 			//ArrayList<ArrayList<double> >  a;
 			//a.add(new ArrayList<double>(3));			
-			Vector <Vector <Double>> a= new Vector <Vector <Double>> ();
+			Integer a = new Integer (4);
+			int b=a;
+			a=0;
+			System.out.println(a+" "+b);
+			
+			/*Vector <Vector <Double>> a= new Vector <Vector <Double>> ();
 			a.addElement(new Vector <Double> (3));
 			a.get(0).addElement(new Double (3));
 			a.get(0).addElement(new Double (1));
@@ -95,7 +101,8 @@ public class proba
 		    f.add(new JScrollPane(table));
 		    f.setVisible(true);
 		  
-		}
+		}*/
 		
 		
+}
 }

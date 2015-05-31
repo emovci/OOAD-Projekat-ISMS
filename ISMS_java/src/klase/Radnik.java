@@ -1,3 +1,4 @@
+package klase;
 import java.util.*;
 import java.util.Vector;
 public class Radnik extends Generalisani_radnik 
@@ -22,5 +23,9 @@ public class Radnik extends Generalisani_radnik
 	public void ukloni_naredbu (int redni_broj)
 	{
 			this.trenutna_naredba.remove(redni_broj);
+	}
+	public int vrsta_radnika()
+	{
+		return 1;
 	}
 }

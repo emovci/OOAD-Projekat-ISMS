@@ -24,7 +24,7 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 
 
-public class Skladiste {
+public class Skladiste_prozor {
 
 	private JFrame frame;
 	private JTable table;
@@ -37,11 +37,11 @@ public class Skladiste {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void novi_prozor() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Skladiste window = new Skladiste();
+					Skladiste_prozor window = new Skladiste_prozor();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,7 +53,7 @@ public class Skladiste {
 	/**
 	 * Create the application.
 	 */
-	public Skladiste() {
+	public Skladiste_prozor() {
 		initialize();
 	}
 
@@ -64,15 +64,14 @@ public class Skladiste {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 784, 474);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblTrenutnoStanjeU = DefaultComponentFactory.getInstance().createLabel("Trenutno stanje u skladu\u0161tu (sedmi\u010Dni podaci)");
 		lblTrenutnoStanjeU.setBounds(37, 27, 408, 14);
 		frame.getContentPane().add(lblTrenutnoStanjeU);
 		
-	    Object[][] cellData = { { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" }, { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" } , { "1-1", "1-2" }, { "2-1", "2-2" }  };
-	    //String[] columnNames = { "a", "b","c","d" };
+	    //testni prozor
 	    Vector< Vector <String>> rowData = new Vector<Vector<String>>();
 		Vector<String> temprow = new Vector<String>();
 		for (int i = 0; i < 4; i++) 

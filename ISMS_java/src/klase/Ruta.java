@@ -1,3 +1,4 @@
+package klase;
 import java.util.Vector;
 
 public class Ruta {
@@ -11,6 +12,7 @@ public class Ruta {
 		private boolean ruta_zavrsena;
 		private String komentar;
 		private double cijena_rute;
+		private int broj_rute;
 		
 		public Mjesto get_startno_mjesto() 
 		{

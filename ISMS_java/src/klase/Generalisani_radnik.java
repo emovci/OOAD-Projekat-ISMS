@@ -1,4 +1,5 @@
-public class Generalisani_radnik extends Osoba {
+package klase;
+public abstract class Generalisani_radnik extends Osoba {
 
 	private boolean status;
 	private int id;
@@ -32,5 +33,5 @@ public class Generalisani_radnik extends Osoba {
 	{
 			return this.get_ime()+" "+this.get_prezime()+" ("+this.id+")";
 	}
-
+	public abstract int vrsta_radnika();
 }

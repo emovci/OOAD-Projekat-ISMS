@@ -1,3 +1,4 @@
+package klase;
 
 public class Datum 
 {

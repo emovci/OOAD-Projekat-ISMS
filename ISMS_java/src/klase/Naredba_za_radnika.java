@@ -1,3 +1,4 @@
+package klase;
 import java.util.Vector;
 
 public class Naredba_za_radnika {
