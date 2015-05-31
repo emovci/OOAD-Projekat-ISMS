@@ -28,6 +28,8 @@ public class Gen_radnik_vektor
 				radnici.addElement(new Vozac(ime, prezime, datum_rodjenja, status, zadnji_id, plata_dnevnica, trenutna_naredba, kamion));
 				zadnji_id++;
 		}
+		
+		
 		public void ukloni_radnika (int redni_broj)
 		{
 				radnici.removeElement(redni_broj);
