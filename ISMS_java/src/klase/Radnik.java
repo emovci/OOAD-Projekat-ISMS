@@ -5,7 +5,19 @@ public class Radnik extends Generalisani_radnik
 
 	private Vector <Naredba_za_radnika> trenutna_naredba =new Vector <Naredba_za_radnika> ();
 	
-	public Radnik (String ime, String prezime, Datum datum_rodjenja, boolean status, int id, double plata_dnevnica, Vector <Naredba_za_vozaca> trenutna_naredba, Kamion kamion )
+	public Radnik (String ime, String prezime, Datum datum_rodjenja, boolean status, int id, double plata_dnevnica, Vector <Naredba_za_radnika> trenutna_naredba )
+	{
+			this.set_Ime(ime);
+			this.set_prezime(prezime);
+			this.set_datum_rodjenja(datum_rodjenja);
+			this.set_status(status);
+			this.set_id(id);
+			this.set_plata_dnevnica(plata_dnevnica);
+			this.set_trenutna_naredba(trenutna_naredba);
+			
+		
+	}
+	public Radnik (String ime, String prezime, Datum datum_rodjenja, boolean status, int id, double plata_dnevnica)
 	{
 			this.set_Ime(ime);
 			this.set_prezime(prezime);

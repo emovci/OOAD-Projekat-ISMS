@@ -20,9 +20,13 @@ import vektori.Vrste_robe_vektor;
 import klase.Datum;
 import klase.Kamion;
 import klase.Naredba_za_vozaca;
+import klase.Naredba_za_radnika;
 import klase.Skladiste;
 import prozori.Skladiste_prozor;
 import klase.Vozac;
+import klase.Roba;
+import javax.swing.JOptionPane;
+import klase.Radnik;
 
 
 public class Glavni_prozor 
@@ -64,6 +68,8 @@ public class Glavni_prozor
 		
 		Vector<Naredba_za_vozaca> test=new Vector<Naredba_za_vozaca>();
 		test.addElement(new Naredba_za_vozaca());
+		Vector<Naredba_za_radnika> test1=new Vector<Naredba_za_radnika>();
+		//test1.addElement(new Naredba_za_radnika(new Vector<Roba>(),new Datum (12,12,2015,1,1),true,true));
 		
 		Vozac vozac1=null;
 		try{vozac1 = new Vozac ("Suad","Krilaševiæ",new Datum (12,02,2015,0,0), true, new Integer (1),new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));}
@@ -75,8 +81,25 @@ public class Glavni_prozor
 		
 		radnici.dodaj_radnika(vozac1);
 		radnici.dodaj_radnika(vozac2);
+		
 		try{radnici.dodaj_vozaca("Emir","Hasanoviæ",new Datum (22,9,2015,0,0), true, new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));}
 		catch( InterruptedException izuzetak) {};
+		
+		try{radnici.dodaj_radnika("Niko","Nikiæ",new Datum (25,9,2015,0,0), true, new Double(300.3),test1);}
+		catch( InterruptedException izuzetak) {};
+		
+		//JOptionPane.showMessageDialog(null, ""+radnici.get_radnike().elementAt(3).get_ime());
+		
+		Radnik radnik1=null;
+		try{radnik1 = new Radnik ("Semir","Berkovic",new Datum (12,02,2015,0,0), true, new Integer (3),new Double(300.3));}
+		catch( InterruptedException izuzetak) {};
+		
+		Radnik radnik2=null;
+		try{radnik2 = new Radnik ("Emir","Hasanovic",new Datum (12,02,2015,0,0), true, new Integer (4),new Double(300.3));}
+		catch( InterruptedException izuzetak) {};
+		
+		radnici.dodaj_radnika(radnik1);
+		radnici.dodaj_radnika(radnik2);
 	}
 
 	/**
@@ -137,7 +160,7 @@ public class Glavni_prozor
 		btnRadnik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Radnik np= new Radnik();
+				Radnik_prozor np= new Radnik_prozor();
 				np.novi_prozor();
 			}
 		});

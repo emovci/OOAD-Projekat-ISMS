@@ -18,7 +18,7 @@ import java.awt.event.MouseEvent;
 import java.util.Vector;
 
 
-public class Radnik {
+public class Radnik_prozor {
 
 	private JFrame frame;
 	private JTable table;
@@ -31,7 +31,7 @@ public class Radnik {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Radnik window = new Radnik();
+					Radnik_prozor window = new Radnik_prozor();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class Radnik {
 	/**
 	 * Create the application.
 	 */
-	public Radnik() {
+	public Radnik_prozor() {
 		initialize();
 	}
 

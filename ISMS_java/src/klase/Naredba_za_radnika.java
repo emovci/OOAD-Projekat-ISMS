@@ -3,7 +3,7 @@ import java.util.Vector;
 
 public class Naredba_za_radnika {
 
-	private Vector<Roba> roba_za_premjestanje;
+	private Vector<Roba> roba_za_premjestanje=new Vector<Roba>();
 	private Datum vrijeme_za_premjestanje;
 	private boolean naredba_prihvacena;
 	private boolean naredba_izvrsena;
