@@ -75,7 +75,8 @@ public class Glavni_prozor
 		
 		radnici.dodaj_radnika(vozac1);
 		radnici.dodaj_radnika(vozac2);
-		
+		try{radnici.dodaj_vozaca("Emir","Hasanoviæ",new Datum (22,9,2015,0,0), true, new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));}
+		catch( InterruptedException izuzetak) {};
 	}
 
 	/**
