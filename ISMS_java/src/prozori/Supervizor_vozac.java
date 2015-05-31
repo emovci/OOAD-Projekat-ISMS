@@ -55,19 +55,25 @@ public class Supervizor_vozac {
 		frame.getContentPane().setLayout(null);
 		
 		Vector< Vector <String>> rowData = new Vector<Vector<String>>();
-		Vector<String> temprow = new Vector<String>();
-		for (int i = 0; i < 4; i++) 
-	    {
-	    		temprow.addElement("123456789123456789");
-	    }	
-	      for (int j = 0; j < 20; j++)
-	      rowData.add(temprow);
+
+		for (int j=0; j<Glavni_prozor.radnici.get_radnike().size(); j++)
+		{
+				Vector<String> temprow = new Vector<String>();
+				temprow.addElement(Glavni_prozor.radnici.get_radnike().elementAt(j).get_ime());
+				temprow.addElement(Glavni_prozor.radnici.get_radnike().elementAt(j).get_prezime());
+				temprow.addElement(Glavni_prozor.radnici.get_radnike().elementAt(j).get_id()+"");
+				if(Glavni_prozor.radnici.get_radnike().elementAt(j).get_vrsta_radnika()==0)
+						temprow.addElement("Vozaè");
+				else
+						temprow.addElement("Radnik");
+				rowData.add(temprow);
+		}
 	      //rowData.add(temprow);
 	      Vector<String> columnNames = new Vector<String>();
-	      columnNames.addElement("Ime 1");
-	      columnNames.addElement("Ime 2");
-	      columnNames.addElement("Ime 3");
-	      columnNames.addElement("Ime 4");
+	      columnNames.addElement("Ime");
+	      columnNames.addElement("Ime Prezime");
+	      columnNames.addElement("ID");
+	      columnNames.addElement("Zaposlenje");
 		table = new JTable(rowData, columnNames)
 		{
 	        private static final long serialVersionUID = 1L;

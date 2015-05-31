@@ -17,6 +17,7 @@ import vektori.Naredba_za_radnika_vektor;
 import vektori.Naredba_za_vozaca_vektor;
 import vektori.Ugovor_vektor;
 import vektori.Vrste_robe_vektor;
+import klase.Datum;
 import klase.Kamion;
 import klase.Naredba_za_vozaca;
 import klase.Skladiste;
@@ -24,8 +25,19 @@ import prozori.Skladiste_prozor;
 import klase.Vozac;
 
 
-public class Glavni_prozor {
+public class Glavni_prozor 
 
+{
+
+	public static Gen_radnik_vektor radnici=new Gen_radnik_vektor();
+	public static Kamion_vektor kamioni=new Kamion_vektor();
+	public static Klijent_vektor klijenti=new Klijent_vektor();
+	public static Naredba_za_radnika_vektor radnicke_naredbe= new Naredba_za_radnika_vektor();
+	public static Naredba_za_vozaca_vektor vozacke_naredbe= new Naredba_za_vozaca_vektor();
+	public static Ugovor_vektor ugovori=new Ugovor_vektor();
+	public static Vrste_robe_vektor vrste_robe=new Vrste_robe_vektor();
+	public static Skladiste skladiste=new Skladiste();
+	
 	private JFrame frame;
 
 	/**
@@ -48,18 +60,21 @@ public class Glavni_prozor {
 				
 			}
 		});
-		Gen_radnik_vektor radnici=new Gen_radnik_vektor();
-		Kamion_vektor kamioni=new Kamion_vektor();
-		Klijent_vektor klijenti=new Klijent_vektor();
-		Naredba_za_radnika_vektor radnicke_naredbe= new Naredba_za_radnika_vektor();
-		Naredba_za_vozaca_vektor vozacke_naredbe= new Naredba_za_vozaca_vektor();
-		Ugovor_vektor ugovori=new Ugovor_vektor();
-		Vrste_robe_vektor vrste_robe=new Vrste_robe_vektor();
-		Skladiste skladiste=new Skladiste();
+
 		
 		Vector<Naredba_za_vozaca> test=new Vector<Naredba_za_vozaca>();
 		test.addElement(new Naredba_za_vozaca());
-//		Vozac ab = new Vozac (true, new Integer (1),new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));
+		
+		Vozac vozac1=null;
+		try{vozac1 = new Vozac ("Suad","Krilaševiæ",new Datum (12,02,2015,0,0), true, new Integer (1),new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));}
+		catch( InterruptedException izuzetak) {};
+		
+		Vozac vozac2=null;
+		try{vozac2 = new Vozac ("Senad","Krilaševiæ",new Datum (12,02,2015,0,0), true, new Integer (1),new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));}
+		catch( InterruptedException izuzetak) {};
+		
+		radnici.dodaj_radnika(vozac1);
+		radnici.dodaj_radnika(vozac2);
 		
 	}
 

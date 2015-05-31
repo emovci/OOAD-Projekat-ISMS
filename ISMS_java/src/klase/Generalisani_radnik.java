@@ -37,5 +37,5 @@ public abstract class Generalisani_radnik extends Osoba {
 	{
 			return this.get_ime()+" "+this.get_prezime()+" ("+this.id+")";
 	}
-	public abstract int vrsta_radnika();
+	public abstract int get_vrsta_radnika();
 }

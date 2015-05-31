@@ -26,7 +26,7 @@ public class Datum
 			
 	}
 	
-	public String datum_string ()
+	public String daj_string ()
 	{
 			return ""+dan+". "+mjesec+". "+godina+". "+sati+":"+minute;
 	}

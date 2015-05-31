@@ -45,7 +45,7 @@ public class Vozac extends Generalisani_radnik {
 	{
 			this.trenutna_naredba.remove(redni_broj);
 	}
-	public int vrsta_radnika()
+	public int get_vrsta_radnika()
 	{
 		return 0;
 	}

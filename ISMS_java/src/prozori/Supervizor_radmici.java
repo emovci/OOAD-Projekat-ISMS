@@ -69,10 +69,10 @@ public class Supervizor_radmici {
 	      rowData.add(temprow);
 	      //rowData.add(temprow);
 	      Vector<String> columnNames = new Vector<String>();
-	      columnNames.addElement("Ime 1");
-	      columnNames.addElement("Ime 2");
-	      columnNames.addElement("Ime 3");
-	      columnNames.addElement("Ime 4");
+	      columnNames.addElement("Ime");
+	      columnNames.addElement("Prezime");
+	      columnNames.addElement("Godište");
+	      columnNames.addElement("Sposoban za rad");
 		table = new JTable(rowData, columnNames)
 		{
 	        private static final long serialVersionUID = 1L;
