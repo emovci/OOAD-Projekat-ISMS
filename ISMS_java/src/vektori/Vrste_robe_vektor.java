@@ -18,7 +18,7 @@ public class Vrste_robe_vektor
 	}
 	public void ukloni_robu (int redni_broj)
 	{
-			roba.removeElement(redni_broj);
+			roba.remove(redni_broj);
 	}
 }
 

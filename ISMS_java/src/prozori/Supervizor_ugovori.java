@@ -60,19 +60,30 @@ public class Supervizor_ugovori {
 		frame.getContentPane().add(lblListaUgovora);
 		
 		Vector< Vector <String>> rowData = new Vector<Vector<String>>();
-		Vector<String> temprow = new Vector<String>();
-		for (int i = 0; i < 4; i++) 
-	    {
-	    		temprow.addElement("123456789123456789");
-	    }	
-	      for (int j = 0; j < 20; j++)
-	      rowData.add(temprow);
+		for (int j=0; j<Glavni_prozor.ugovori.get_ugovori().size(); j++)
+		{
+				
+				Vector<String> temprow = new Vector<String>();
+				temprow.addElement(Glavni_prozor.ugovori.get_ugovori().elementAt(j).get_klijent().get_naziv_firme());
+				
+				if(Glavni_prozor.ugovori.get_ugovori().elementAt(j).get_kupovina()==true)
+					temprow.addElement("Kupovina");
+				else
+					temprow.addElement("Prodaja");
+				if(Glavni_prozor.ugovori.get_ugovori().elementAt(j).get_valjanost()==true)
+					temprow.addElement("Valjan");
+				else
+					temprow.addElement("Istekao");
+				temprow.addElement(Glavni_prozor.ugovori.get_ugovori().elementAt(j).get_klijent().get_naziv_firme());
+				rowData.add(temprow);
+		}
+			
 	      //rowData.add(temprow);
 	      Vector<String> columnNames = new Vector<String>();
-	      columnNames.addElement("Ime 1");
-	      columnNames.addElement("Ime 2");
-	      columnNames.addElement("Ime 3");
-	      columnNames.addElement("Ime 4");
+	      columnNames.addElement("Klijent");
+	      columnNames.addElement("Kupovina/Prodaja");
+	      columnNames.addElement("Valjanost");
+	      columnNames.addElement("Roba");
 		table = new JTable(rowData, columnNames)
 		{
 	        private static final long serialVersionUID = 1L;
@@ -123,8 +134,20 @@ public class Supervizor_ugovori {
 		
 		JButton btnRaskiniUgovor = new JButton("Raskini ugovor");
 		btnRaskiniUgovor.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
+			public void actionPerformed(ActionEvent e) 
+			{
+				Object[] options = { "DA", "NE" };
+				int odgovor=JOptionPane.showOptionDialog(null, "Da li ste sigurni da želite da raskinete ugovor?", "Potvrda",JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,	null, options, options[0]);
+			
+				//int odgovor = JOptionPane.showConfirmDialog(null, "Da li ste sigurni da želite da otpustite radnika?", "Potvrda",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				if (odgovor == 1) 
+						return;
+					
+				Glavni_prozor.ugovori.ukloni_ugovor(table.getSelectedRow());
+				JOptionPane.showMessageDialog(null, "Ugovor raskinut!");
+									
+				
+		}
 		});
 		btnRaskiniUgovor.setBounds(10, 290, 204, 39);
 		frame.getContentPane().add(btnRaskiniUgovor);

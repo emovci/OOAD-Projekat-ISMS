@@ -12,7 +12,7 @@ public class Gen_radnik_vektor
 {
 
 		private Vector <Generalisani_radnik> radnici=new Vector <Generalisani_radnik> ();
-		private int zadnji_id;
+		private int zadnji_id=0;
 
 		
 		public Vector <Generalisani_radnik> get_radnike ()
@@ -40,7 +40,7 @@ public class Gen_radnik_vektor
 		
 		public void ukloni_radnika (int redni_broj)
 		{
-				radnici.removeElement(redni_broj);
+				radnici.remove(redni_broj);
 		}
 		public int get_zadnji_id()
 		{

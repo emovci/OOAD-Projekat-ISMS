@@ -4,7 +4,7 @@ import java.util.Vector;
 import klase.Ugovor;
 public class Ugovor_vektor 
 {
-	private Vector <Ugovor> ugovori ;
+	private Vector <Ugovor> ugovori = new Vector <Ugovor>();
 	
 	public Vector <Ugovor> get_ugovori ()
 	{
@@ -17,7 +17,7 @@ public class Ugovor_vektor
 	}
 	public void ukloni_ugovor (int redni_broj)
 	{
-			ugovori.removeElement(redni_broj);
+			ugovori.remove(redni_broj);
 	}
 }
 

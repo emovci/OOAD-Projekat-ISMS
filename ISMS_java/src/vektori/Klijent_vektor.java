@@ -18,7 +18,7 @@ public class Klijent_vektor
 		}
 		public void ukloni_klijenta (int redni_broj)
 		{
-				klijenti.removeElement(redni_broj);
+				klijenti.remove(redni_broj);
 		}
 	}
 

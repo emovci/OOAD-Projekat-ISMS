@@ -27,6 +27,8 @@ import klase.Vozac;
 import klase.Roba;
 import javax.swing.JOptionPane;
 import klase.Radnik;
+import klase.Ugovor;
+import klase.Klijent;
 
 
 public class Glavni_prozor 
@@ -100,6 +102,11 @@ public class Glavni_prozor
 		
 		radnici.dodaj_radnika(radnik1);
 		radnici.dodaj_radnika(radnik2);
+		
+		Ugovor ugovor1=null;
+		try{ugovor1 = new Ugovor (new Datum (1,1,2015,0,0),new Datum (1,1,2018,0,0),new Klijent("FDS d.o.o.",new Vector<Roba>()),true,true,new Vector<Roba>());}
+		catch( InterruptedException izuzetak) {};
+		ugovori.dodaj_ugovor(ugovor1);
 	}
 
 	/**

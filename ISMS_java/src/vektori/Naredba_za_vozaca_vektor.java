@@ -17,7 +17,7 @@ public class Naredba_za_vozaca_vektor
 	}
 	public void ukloni_naredbu (int redni_broj)
 	{
-			naredbe.removeElement(redni_broj);
+			naredbe.remove(redni_broj);
 	}
 }
 

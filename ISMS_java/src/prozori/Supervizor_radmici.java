@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 
@@ -79,7 +81,7 @@ public class Supervizor_radmici {
 	      Vector<String> columnNames = new Vector<String>();
 	      columnNames.addElement("Ime");
 	      columnNames.addElement("Prezime");
-	      columnNames.addElement("Godište");
+	      columnNames.addElement("ID");
 	      columnNames.addElement("Sposoban za rad");
 		table = new JTable(rowData, columnNames)
 		{
@@ -131,6 +133,30 @@ public class Supervizor_radmici {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Otpusti radnika");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+					Object[] options = { "DA", "NE" };
+					int odgovor=JOptionPane.showOptionDialog(null, "Da li ste sigurni da želite da otpustite radnika", "Potvrda",JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,	null, options, options[0]);
+				
+					//int odgovor = JOptionPane.showConfirmDialog(null, "Da li ste sigurni da želite da otpustite radnika?", "Potvrda",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if (odgovor == 1) 
+							return;
+						
+					Object temp=table.getValueAt(table.getSelectedRow(), 2) ;
+					String temp1=(String)temp;
+					int id = Integer.parseInt(temp1);
+					for(int i=0; i<Glavni_prozor.radnici.get_radnike().size(); i++)
+					{
+							if(id==Glavni_prozor.radnici.get_radnike().elementAt(i).get_id())
+							{
+									Glavni_prozor.radnici.ukloni_radnika(i);
+									JOptionPane.showMessageDialog(null, "Radnik otpušten!");
+									break;
+							}
+					}
+			}
+		});
 		btnNewButton_1.setBounds(309, 398, 200, 50);
 		frame.getContentPane().add(btnNewButton_1);
 		

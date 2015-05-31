@@ -18,7 +18,7 @@ public class Kamion_vektor
 	}
 	public void ukloni_kamion (int redni_broj)
 	{
-			kamioni.removeElement(redni_broj);
+			kamioni.remove(redni_broj);
 	}
 	public int get_zadnji_id()
 	{

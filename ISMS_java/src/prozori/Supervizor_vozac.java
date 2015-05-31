@@ -130,6 +130,30 @@ public class Supervizor_vozac {
 		frame.getContentPane().add(btnZaposliVozaa);
 		
 		JButton btnOtpustiVozaa = new JButton("Otpusti voza\u010Da");
+		btnOtpustiVozaa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+					Object[] options = { "DA", "NE" };
+					int odgovor=JOptionPane.showOptionDialog(null, "Da li ste sigurni da želite da otpustite radnika", "Potvrda",JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,	null, options, options[0]);
+				
+					//int odgovor = JOptionPane.showConfirmDialog(null, "Da li ste sigurni da želite da otpustite radnika?", "Potvrda",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+					if (odgovor == 1) 
+							return;
+						
+					Object temp=table.getValueAt(table.getSelectedRow(), 2) ;
+					String temp1=(String)temp;
+					int id = Integer.parseInt(temp1);
+					for(int i=0; i<Glavni_prozor.radnici.get_radnike().size(); i++)
+					{
+							if(id==Glavni_prozor.radnici.get_radnike().elementAt(i).get_id())
+							{
+									Glavni_prozor.radnici.ukloni_radnika(i);
+									JOptionPane.showMessageDialog(null, "Radnik otpušten!");
+									break;
+							}
+					}
+			}
+		});
 		btnOtpustiVozaa.setBounds(311, 326, 200, 50);
 		frame.getContentPane().add(btnOtpustiVozaa);
 		

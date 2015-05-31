@@ -130,17 +130,13 @@ public class Supervizor_zaposli_vozac {
 						return;
 					}				
 					
-					Glavni_prozor.radnici.dodaj_vozaca(textField.getText(), textField_1.getText(), rodjenje, false, Integer.parseInt(textField_3.getText()), null, null);
+					Glavni_prozor.radnici.dodaj_vozaca(textField.getText(), textField_1.getText(), rodjenje, true, Integer.parseInt(textField_3.getText()), null, null);
 					JOptionPane.showMessageDialog(null, "Vozaè uspješno dodan!");
 					
 			}
 		});
-		button.setBounds(10, 277, 147, 50);
+		button.setBounds(10, 277, 315, 50);
 		frame.getContentPane().add(button);
-		
-		JButton button_1 = new JButton("Odustani");
-		button_1.setBounds(178, 277, 147, 50);
-		frame.getContentPane().add(button_1);
 		
 		JLabel lblIme = DefaultComponentFactory.getInstance().createLabel("Ime");
 		lblIme.setBounds(10, -11, 200, 50);
