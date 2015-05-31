@@ -74,7 +74,7 @@ public class Supervizor_ugovori {
 					temprow.addElement("Valjan");
 				else
 					temprow.addElement("Istekao");
-				temprow.addElement(Glavni_prozor.ugovori.get_ugovori().elementAt(j).get_klijent().get_naziv_firme());
+				temprow.addElement(Glavni_prozor.ugovori.get_ugovori().elementAt(j).get_roba().firstElement().get_vrsta_robe().get_ime());
 				rowData.add(temprow);
 		}
 			

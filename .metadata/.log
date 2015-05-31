@@ -1934,3 +1934,13 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.wb.core 4 4 2015-05-31 23:40:23.244
+!MESSAGE Designer [1.7.0.r44x201405021531.201505311158]: java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.wb.core 4 4 2015-05-31 23:40:28.268
+!MESSAGE Designer [1.7.0.r44x201405021531.201505311158]: java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException

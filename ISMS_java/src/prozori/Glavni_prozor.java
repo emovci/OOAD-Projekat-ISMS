@@ -29,6 +29,7 @@ import javax.swing.JOptionPane;
 import klase.Radnik;
 import klase.Ugovor;
 import klase.Klijent;
+import klase.Vrsta_robe;
 
 
 public class Glavni_prozor 
@@ -104,7 +105,13 @@ public class Glavni_prozor
 		radnici.dodaj_radnika(radnik2);
 		
 		Ugovor ugovor1=null;
-		try{ugovor1 = new Ugovor (new Datum (1,1,2015,0,0),new Datum (1,1,2018,0,0),new Klijent("FDS d.o.o.",new Vector<Roba>()),true,true,new Vector<Roba>());}
+		Roba roba=null;
+		try{roba=new Roba(new Vrsta_robe("Drvo",1000,10000),1000,10);}
+		catch( InterruptedException izuzetak) {};
+		
+		Vector<Roba> v=new Vector<Roba>();
+		v.addElement(roba);
+		try{ugovor1 = new Ugovor (new Datum (1,1,2015,0,0),new Datum (1,1,2018,0,0),new Klijent("FDS d.o.o.",v),true,true,v);}
 		catch( InterruptedException izuzetak) {};
 		ugovori.dodaj_ugovor(ugovor1);
 	}

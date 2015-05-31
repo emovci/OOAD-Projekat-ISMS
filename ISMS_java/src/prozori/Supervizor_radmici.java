@@ -161,10 +161,15 @@ public class Supervizor_radmici {
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnIzmjeniRadnika = new JButton("Izmjeni radnika");
-		btnIzmjeniRadnika.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Supervizor_izmjeni_radnika np= new Supervizor_izmjeni_radnika ();
-				np.novi_prozor();
+		btnIzmjeniRadnika.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				//Supervizor_izmjeni_radnika np= new Supervizor_izmjeni_radnika ();
+				Object temp = table.getValueAt(table.getSelectedRow(), 2);
+				String temp1=(String)temp;
+				int id = Integer.parseInt(temp1);
+				prozori.Supervizor_izmjeni_radnika.novi_prozor(id);
 			}
 		});
 		btnIzmjeniRadnika.setBounds(10, 398, 200, 50);

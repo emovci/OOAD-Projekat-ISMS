@@ -159,9 +159,13 @@ public class Supervizor_vozac {
 		
 		JButton btnIzmjeniVozaa = new JButton("Izmjeni voza\u010Da");
 		btnIzmjeniVozaa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Supervizor_izmjeni_vozac np= new Supervizor_izmjeni_vozac ();
-				np.novi_prozor();
+			public void actionPerformed(ActionEvent e)
+			{
+				Object temp = table.getValueAt(table.getSelectedRow(), 2);
+				String temp1=(String)temp;
+				int id = Integer.parseInt(temp1);
+				prozori.Supervizor_izmjeni_vozac.novi_prozor(id);
+
 			}
 		});
 		btnIzmjeniVozaa.setBounds(311, 387, 200, 50);
