@@ -111,9 +111,14 @@ public class Glavni_prozor
 		
 		Vector<Roba> v=new Vector<Roba>();
 		v.addElement(roba);
-		try{ugovor1 = new Ugovor (new Datum (1,1,2015,0,0),new Datum (1,1,2018,0,0),new Klijent("FDS d.o.o.",v),true,true,v);}
+		Klijent klijent=new Klijent("FDS d.o.o.",v);
+		try{ugovor1 = new Ugovor (new Datum (1,1,2015,0,0),new Datum (1,1,2018,0,0),klijent,true,true,v);}
 		catch( InterruptedException izuzetak) {};
 		ugovori.dodaj_ugovor(ugovor1);
+		
+		Klijent klijent2=new Klijent("Opsasa h.o.h.o.",v);
+		klijenti.dodaj_klijenta(klijent);
+		klijenti.dodaj_klijenta(klijent2);
 	}
 
 	/**

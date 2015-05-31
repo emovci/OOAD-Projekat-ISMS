@@ -5,7 +5,7 @@ import klase.Klijent;
 
 public class Klijent_vektor 
 	{
-		private Vector <Klijent> klijenti;
+		private Vector <Klijent> klijenti = new Vector <Klijent>();
 		
 		public Vector <Klijent> get_klijenti ()
 		{

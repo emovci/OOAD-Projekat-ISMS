@@ -55,19 +55,21 @@ public class Supervizor_klijenti {
 		frame.getContentPane().setLayout(null);
 		
 		Vector< Vector <String>> rowData = new Vector<Vector<String>>();
-		Vector<String> temprow = new Vector<String>();
-		for (int i = 0; i < 4; i++) 
-	    {
-	    		temprow.addElement("123456789123456789");
-	    }	
-	      for (int j = 0; j < 20; j++)
-	      rowData.add(temprow);
+		for (int j=0; j<Glavni_prozor.klijenti.get_klijenti().size(); j++)
+		{
+				
+				Vector<String> temprow = new Vector<String>();
+				temprow.addElement(Glavni_prozor.klijenti.get_klijenti().elementAt(j).get_naziv_firme());
+				temprow.addElement(Glavni_prozor.klijenti.get_klijenti().elementAt(j).get_roba_na_raspolaganju().firstElement().get_vrsta_robe().get_ime());
+				
+				rowData.add(temprow);
+			
+				
+		}
 	      //rowData.add(temprow);
 	      Vector<String> columnNames = new Vector<String>();
-	      columnNames.addElement("Ime 1");
-	      columnNames.addElement("Ime 2");
-	      columnNames.addElement("Ime 3");
-	      columnNames.addElement("Ime 4");
+	      columnNames.addElement("Naziv firme");
+	      columnNames.addElement("Roba");
 		table = new JTable(rowData, columnNames)
 		{
 	        private static final long serialVersionUID = 1L;
