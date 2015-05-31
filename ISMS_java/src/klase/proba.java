@@ -1,11 +1,12 @@
 package klase;
 import java.util.*;
-import java.util.Arrays;
-import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
+import klase.Vozac;
+
 public class proba
 
 {	
@@ -102,7 +103,11 @@ public class proba
 		    f.setVisible(true);
 		  
 		}*/
-		
-		
+		Vector<Naredba_za_vozaca> test=new Vector<Naredba_za_vozaca>();
+		test.addElement(new Naredba_za_vozaca());
+		Vozac ab=null;
+		try{ab = new Vozac ("Suad","Krilaševiæ",new Datum (12,02,2015,0,0), true, new Integer (1),new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));}
+		catch( InterruptedException izuzetak) {};
+		System.out.println(ab.get_ime());
 }
 }

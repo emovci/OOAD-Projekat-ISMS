@@ -17,7 +17,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 
 
-public class Vozac {
+public class Vozac_prozor {
 
 	private JFrame frame;
 	private JTable table;
@@ -29,7 +29,7 @@ public class Vozac {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vozac window = new Vozac();
+					Vozac_prozor window = new Vozac_prozor();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class Vozac {
 	/**
 	 * Create the application.
 	 */
-	public Vozac() {
+	public Vozac_prozor() {
 		initialize();
 	}
 

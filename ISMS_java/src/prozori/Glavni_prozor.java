@@ -5,8 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Vector;
+
 import vektori.Gen_radnik_vektor;
 import vektori.Kamion_vektor;
 import vektori.Klijent_vektor;
@@ -14,8 +17,12 @@ import vektori.Naredba_za_radnika_vektor;
 import vektori.Naredba_za_vozaca_vektor;
 import vektori.Ugovor_vektor;
 import vektori.Vrste_robe_vektor;
+import klase.Kamion;
+import klase.Naredba_za_vozaca;
 import klase.Skladiste;
 import prozori.Skladiste_prozor;
+import klase.Vozac;
+
 
 public class Glavni_prozor {
 
@@ -49,6 +56,11 @@ public class Glavni_prozor {
 		Ugovor_vektor ugovori=new Ugovor_vektor();
 		Vrste_robe_vektor vrste_robe=new Vrste_robe_vektor();
 		Skladiste skladiste=new Skladiste();
+		
+		Vector<Naredba_za_vozaca> test=new Vector<Naredba_za_vozaca>();
+		test.addElement(new Naredba_za_vozaca());
+//		Vozac ab = new Vozac (true, new Integer (1),new Double(300.3),test,new Kamion("kam",1,1,1,1,1,true));
+		
 	}
 
 	/**
@@ -87,7 +99,7 @@ public class Glavni_prozor {
 		btnVoza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 			
 			{
-				Vozac np= new Vozac();
+				Vozac_prozor np= new Vozac_prozor();
 				np.novi_prozor();
 			}
 		});
