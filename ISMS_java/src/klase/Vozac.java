@@ -49,4 +49,8 @@ public class Vozac extends Generalisani_radnik {
 	{
 		return 0;
 	}
+	public Vector <Naredba_za_radnika> get_trenutna_naredba_r() 
+	{
+			return null;
+	}
 }

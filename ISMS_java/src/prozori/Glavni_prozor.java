@@ -5,10 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.Vector;
+
 
 import vektori.Gen_radnik_vektor;
 import vektori.Kamion_vektor;
@@ -25,11 +28,17 @@ import klase.Skladiste;
 import prozori.Skladiste_prozor;
 import klase.Vozac;
 import klase.Roba;
+
 import javax.swing.JOptionPane;
+
 import klase.Radnik;
 import klase.Ugovor;
 import klase.Klijent;
 import klase.Vrsta_robe;
+
+import javax.swing.JComboBox;
+
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 
 public class Glavni_prozor 
@@ -93,8 +102,26 @@ public class Glavni_prozor
 		
 		//JOptionPane.showMessageDialog(null, ""+radnici.get_radnike().elementAt(3).get_ime());
 		
+		Ugovor ugovor1=null;
+		Roba roba=null;
+		try{roba=new Roba(new Vrsta_robe("Drvo",1000,10000),1000,10);}
+		catch( InterruptedException izuzetak) {};
+		
+		Vector<Roba> v=new Vector<Roba>();
+		v.addElement(roba);
+		
+		Naredba_za_radnika naredba=null;
+		try{naredba = new Naredba_za_radnika(v,new Datum (12,02,2015,0,0),false,false);}
+		catch( InterruptedException izuzetak) {};
+		
+		Vector<Naredba_za_radnika> naredba_prvi_radnik= new Vector<Naredba_za_radnika>();
+		naredba_prvi_radnik.addElement(naredba);
+		naredba_prvi_radnik.addElement(naredba);
+		//radnicke_naredbe.dodaj_naredbu(naredba);
+		
+		
 		Radnik radnik1=null;
-		try{radnik1 = new Radnik ("Semir","Berkovic",new Datum (12,02,2015,0,0), true, new Integer (3),new Double(300.3));}
+		try{radnik1 = new Radnik ("Semir","Berkovic",new Datum (12,02,2015,0,0), true, new Integer (3),new Double(300.3),naredba_prvi_radnik);}
 		catch( InterruptedException izuzetak) {};
 		
 		Radnik radnik2=null;
@@ -104,13 +131,7 @@ public class Glavni_prozor
 		radnici.dodaj_radnika(radnik1);
 		radnici.dodaj_radnika(radnik2);
 		
-		Ugovor ugovor1=null;
-		Roba roba=null;
-		try{roba=new Roba(new Vrsta_robe("Drvo",1000,10000),1000,10);}
-		catch( InterruptedException izuzetak) {};
 		
-		Vector<Roba> v=new Vector<Roba>();
-		v.addElement(roba);
 		Klijent klijent=new Klijent("FDS d.o.o.",v);
 		try{ugovor1 = new Ugovor (new Datum (1,1,2015,0,0),new Datum (1,1,2018,0,0),klijent,true,true,v);}
 		catch( InterruptedException izuzetak) {};
@@ -119,6 +140,9 @@ public class Glavni_prozor
 		Klijent klijent2=new Klijent("Opsasa h.o.h.o.",v);
 		klijenti.dodaj_klijenta(klijent);
 		klijenti.dodaj_klijenta(klijent2);
+		//if (radnici.get_radnike().get(3).get_trenutna_naredba()==naredba_prvi_radnik) JOptionPane.showMessageDialog(null, "uspjelo");
+		//else JOptionPane.showMessageDialog(null, "nije uspjelo");
+		
 	}
 
 	/**
@@ -134,9 +158,37 @@ public class Glavni_prozor
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 516, 342);
+		frame.setBounds(100, 100, 516, 351);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+
+		Vector <String> niz1 = new Vector <String>();
+		Vector <String> niz2 = new Vector <String>();
+		
+		for(int i=0; i<Glavni_prozor.radnici.get_radnike().size(); i++)
+		{
+			if(Glavni_prozor.radnici.get_radnike().get(i).get_vrsta_radnika()==0)
+				niz1.addElement(Glavni_prozor.radnici.get_radnike().get(i).get_id()+"");
+			else
+				niz2.addElement(Glavni_prozor.radnici.get_radnike().get(i).get_id()+"");
+		}
+		
+		JComboBox comboBox = new JComboBox(niz2);
+		comboBox.setBounds(276, 273, 203, 20);
+		frame.getContentPane().add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox(niz1);
+		comboBox_1.setBounds(29, 273, 203, 20);
+		frame.getContentPane().add(comboBox_1);
+		
+		JLabel lblIdVozaa = DefaultComponentFactory.getInstance().createLabel("ID voza\u010Da");
+		lblIdVozaa.setBounds(29, 248, 162, 14);
+		frame.getContentPane().add(lblIdVozaa);
+		
+		JLabel lblIdRadnika = DefaultComponentFactory.getInstance().createLabel("ID radnika");
+		lblIdRadnika.setBounds(276, 248, 92, 14);
+		frame.getContentPane().add(lblIdRadnika);
 		
 		JLabel lblDemoVerzijaIzaberire = new JLabel("Demo verzija. Izaberire \u017Eeljenu perspektivu");
 		lblDemoVerzijaIzaberire.setBounds(155, 38, 336, 29);
@@ -161,7 +213,7 @@ public class Glavni_prozor
 				np.novi_prozor();
 			}
 		});
-		btnVoza.setBounds(29, 214, 203, 59);
+		btnVoza.setBounds(29, 171, 203, 59);
 		frame.getContentPane().add(btnVoza);
 		
 		JButton btnef = new JButton("\u0160ef");
@@ -179,11 +231,14 @@ public class Glavni_prozor
 		btnRadnik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Radnik_prozor np= new Radnik_prozor();
-				np.novi_prozor();
+				int id=Integer.parseInt((String) comboBox.getSelectedItem());
+				prozori.Radnik_prozor.novi_prozor(id);
 			}
 		});
-		btnRadnik.setBounds(276, 214, 203, 59);
+		btnRadnik.setBounds(276, 171, 203, 59);
 		frame.getContentPane().add(btnRadnik);
+		
+		
+		
 	}
 }

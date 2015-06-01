@@ -2,4 +2,23 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Vector"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="klase.Klijent"/>
+<fullyQualifiedTypeName name="klase.Naredba_za_radnika"/>
+<fullyQualifiedTypeName name="klase.Naredba_za_vozaca"/>
+<fullyQualifiedTypeName name="vektori.Gen_radnik_vektor"/>
+<fullyQualifiedTypeName name="vektori.Kamion_vektor"/>
+<fullyQualifiedTypeName name="vektori.Klijent_vektor"/>
+<fullyQualifiedTypeName name="vektori.Naredba_za_radnika_vektor"/>
+<fullyQualifiedTypeName name="vektori.Naredba_za_vozaca_vektor"/>
+<fullyQualifiedTypeName name="vektori.Ugovor_vektor"/>
+<fullyQualifiedTypeName name="vektori.Vrste_robe_vektor"/>
+<fullyQualifiedTypeName name="klase.Skladiste"/>
+<fullyQualifiedTypeName name="prozori.Skladiste"/>
+<fullyQualifiedTypeName name="klase.Vozac"/>
+<fullyQualifiedTypeName name="klase.Datum"/>
+<fullyQualifiedTypeName name="klase.Radnik"/>
+<fullyQualifiedTypeName name="klase.Ugovor"/>
+<fullyQualifiedTypeName name="prozori.Supervizor_radmici"/>
+<fullyQualifiedTypeName name="prozori.Supervizor_izmjeni_radnika"/>
+<fullyQualifiedTypeName name="klase.Vrsta_robe"/>
 </qualifiedTypeNameHistroy>

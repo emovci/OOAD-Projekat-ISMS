@@ -67,25 +67,34 @@ public class Skladiste_prozor {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblTrenutnoStanjeU = DefaultComponentFactory.getInstance().createLabel("Trenutno stanje u skladu\u0161tu (sedmi\u010Dni podaci)");
+		JLabel lblTrenutnoStanjeU = DefaultComponentFactory.getInstance().createLabel("Trenutno stanje u skladi\u0161tu (sedmi\u010Dni podaci)");
 		lblTrenutnoStanjeU.setBounds(37, 27, 408, 14);
 		frame.getContentPane().add(lblTrenutnoStanjeU);
 		
 	    //testni prozor
-	    Vector< Vector <String>> rowData = new Vector<Vector<String>>();
-		Vector<String> temprow = new Vector<String>();
-		for (int i = 0; i < 4; i++) 
-	    {
-	    		temprow.addElement("123456789123456789");
-	    }	
-	      for (int j = 0; j < 20; j++)
-	      rowData.add(temprow);
+		Vector< Vector <String>> rowData = new Vector<Vector<String>>();
+		for (int j=0; j<Glavni_prozor.radnici.get_radnike().size(); j++)
+		{		
+				Vector<String> temprow = new Vector<String>();
+				if(Glavni_prozor.radnici.get_radnike().elementAt(j).get_vrsta_radnika()==1){
+				if(Glavni_prozor.radnici.get_radnike().elementAt(j).get_trenutna_naredba_r().size()>0){
+				for(int i=0;i<Glavni_prozor.radnici.get_radnike().elementAt(j).get_trenutna_naredba_r().size();i++){
+					if(Glavni_prozor.radnici.get_radnike().elementAt(j).get_trenutna_naredba_r().elementAt(i).get_naredba_izvrsena()==true){
+				temprow.addElement(Glavni_prozor.radnici.get_radnike().elementAt(j).get_trenutna_naredba_r().elementAt(i).get_roba_za_premjestanje().firstElement().get_vrsta_robe().get_ime());
+				temprow.addElement(Double.toString(Glavni_prozor.radnici.get_radnike().elementAt(j).get_trenutna_naredba_r().elementAt(i).get_roba_za_premjestanje().firstElement().get_kolicina()));
+				temprow.addElement(Double.toString(Glavni_prozor.radnici.get_radnike().elementAt(j).get_trenutna_naredba_r().elementAt(i).cijena_naredbe()));
+				temprow.addElement(Glavni_prozor.radnici.get_radnike().elementAt(j).get_id()+"");
+
+				rowData.add(temprow);
+				}}
+				}}
+		}
 	      //rowData.add(temprow);
 	      Vector<String> columnNames = new Vector<String>();
-	      columnNames.addElement("Ime 1");
-	      columnNames.addElement("Ime 2");
-	      columnNames.addElement("Ime 3");
-	      columnNames.addElement("Ime 4");
+	      columnNames.addElement("Roba");
+	      columnNames.addElement("Kolicina");
+	      columnNames.addElement("Cijena");
+	      columnNames.addElement("ID Radnika");
 		table = new JTable(rowData, columnNames)
 		{
 	        private static final long serialVersionUID = 1L;

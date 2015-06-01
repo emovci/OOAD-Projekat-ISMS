@@ -1,4 +1,6 @@
 package klase;
+
+import java.util.Vector;
 public abstract class Generalisani_radnik extends Osoba {
 
 	private boolean status;
@@ -38,4 +40,7 @@ public abstract class Generalisani_radnik extends Osoba {
 			return this.get_ime()+" "+this.get_prezime()+" ("+this.id+")";
 	}
 	public abstract int get_vrsta_radnika();
+	public abstract Vector<Naredba_za_radnika> get_trenutna_naredba_r ();
+	public abstract Vector<Naredba_za_vozaca> get_trenutna_naredba ();
+
 }

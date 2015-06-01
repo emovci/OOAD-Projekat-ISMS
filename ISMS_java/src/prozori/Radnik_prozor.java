@@ -17,6 +17,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
 
+import klase.Roba;
+
 
 public class Radnik_prozor {
 
@@ -27,11 +29,11 @@ public class Radnik_prozor {
 	/**
 	 * Launch the application.
 	 */
-	public static void novi_prozor() {
+	public static void novi_prozor(int id) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Radnik_prozor window = new Radnik_prozor();
+					Radnik_prozor window = new Radnik_prozor(id);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,34 +45,72 @@ public class Radnik_prozor {
 	/**
 	 * Create the application.
 	 */
-	public Radnik_prozor() {
-		initialize();
+	public Radnik_prozor(int id) 
+	{
+		initialize(id);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(int id) 
+	{
 		frame = new JFrame();
-		frame.setBounds(100, 100, 447, 500);
+		frame.setBounds(100, 100, 721, 500);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+			
 		
 		Vector< Vector <String>> rowData = new Vector<Vector<String>>();
-		Vector<String> temprow = new Vector<String>();
-		for (int i = 0; i < 4; i++) 
+		
+		for (int i = 0; i < Glavni_prozor.radnici.get_radnike().size(); i++) 
 	    {
-	    		temprow.addElement("123456789123456789");
+				
+	    		if(id==Glavni_prozor.radnici.get_radnike().get(i).get_id())
+	    		{
+	    			
+	    			if(Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r()==null)
+	    					break;
+	    					
+	    			//JOptionPane.showMessageDialog(null, "došao dovdje"+Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().size());
+	    				for(int j=0; j<Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().size(); j++)
+	    				{
+	    					
+	    						for(int z=0; z<Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().get(j).get_roba_za_premjestanje().size(); z++)
+	    								{
+	    										Vector<String> temprow = new Vector<String>();
+	    										
+	    										Roba temp=Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().get(j).get_roba_za_premjestanje().get(z);
+	    										
+	    										temprow.addElement(temp.get_vrsta_robe().get_ime());
+	    										
+	    										temprow.addElement(""+temp.get_kolicina());
+	    										temprow.addElement(Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().get(j).get_vrijeme_za_premjestanje().daj_string());
+	    										if(Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().get(j).get_naredba_prihvacena())
+	    											temprow.addElement("DA");
+	    										else
+	    											temprow.addElement("NE");
+	    										if(Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().get(j).get_naredba_izvrsena())
+	    											temprow.addElement("DA");
+	    										else
+	    											temprow.addElement("NE");
+	    										rowData.add(temprow);
+	    										
+	    								}
+	    				}
+	    				
+	    	    		break;
+	    		}
+	    		
+	    		
 	    }	
-	      for (int j = 0; j < 20; j++)
-	      rowData.add(temprow);
-	      //rowData.add(temprow);
+
 	      Vector<String> columnNames = new Vector<String>();
-	      columnNames.addElement("Ime 1");
-	      columnNames.addElement("Ime 2");
-	      columnNames.addElement("Ime 3");
-	      columnNames.addElement("Ime 4");
+	      columnNames.addElement("Vrsta robe");
+	      columnNames.addElement("Kolièina (t)");
+	      columnNames.addElement("Do kada premjestiti");
+	      columnNames.addElement("Prihvaæena naredba");
+	      columnNames.addElement("Izvršena naredba");
 		table = new JTable(rowData, columnNames)
 		{
 	        private static final long serialVersionUID = 1L;
@@ -104,7 +144,7 @@ public class Radnik_prozor {
 			}
 		});
 
-		scrollPane.setBounds(10, 120, 410, 263);
+		scrollPane.setBounds(10, 120, 685, 263);
 		frame.getContentPane().add(scrollPane);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
@@ -123,19 +163,48 @@ public class Radnik_prozor {
 		JToggleButton toggleButton_1 = new JToggleButton("Prihvatam zadu\u017Eenje");
 		toggleButton_1.setBounds(10, 37, 200, 50);
 		frame.getContentPane().add(toggleButton_1);
-		
-		JCheckBox checkBox = new JCheckBox("Status zadu\u017Eenja");
-		checkBox.setSelected(true);
-		checkBox.setEnabled(false);
-		checkBox.setBounds(10, 7, 133, 23);
-		frame.getContentPane().add(checkBox);
+		toggleButton_1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) 
+			{
+				Integer red_br=null;
+				for (int i = 0; i < Glavni_prozor.radnici.get_radnike().size(); i++) 	
+			    		if(id==Glavni_prozor.radnici.get_radnike().get(i).get_id())
+			    			red_br=i;
+				if(Glavni_prozor.radnici.get_radnike().get(red_br).get_trenutna_naredba_r()==null)
+					return;
+					
+			//JOptionPane.showMessageDialog(null, "došao dovdje"+Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().size());
+				for(int j=0; j<Glavni_prozor.radnici.get_radnike().get(red_br).get_trenutna_naredba_r().size(); j++)
+						Glavni_prozor.radnici.get_radnike().get(red_br).get_trenutna_naredba_r().get(j).set_naredba_prihvacena(true);
+
+				
+			}
+		});
 		
 		JLabel lblRobaZaPremjestiti = DefaultComponentFactory.getInstance().createLabel("Roba za premjestiti");
 		lblRobaZaPremjestiti.setBounds(10, 98, 181, 14);
 		frame.getContentPane().add(lblRobaZaPremjestiti);
 		
 		JToggleButton toggleButton_2 = new JToggleButton("Zavr\u0161eno zadu\u017Eenje");
-		toggleButton_2.setBounds(220, 394, 200, 50);
+		toggleButton_2.setBounds(495, 394, 200, 50);
 		frame.getContentPane().add(toggleButton_2);
+		toggleButton_2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e1) 
+			{
+				Integer red_br=null;
+				for (int i = 0; i < Glavni_prozor.radnici.get_radnike().size(); i++) 	
+			    		if(id==Glavni_prozor.radnici.get_radnike().get(i).get_id())
+			    			red_br=i;
+				if(Glavni_prozor.radnici.get_radnike().get(red_br).get_trenutna_naredba_r()==null)
+					return;
+					
+			//JOptionPane.showMessageDialog(null, "došao dovdje"+Glavni_prozor.radnici.get_radnike().get(i).get_trenutna_naredba_r().size());
+				for(int j=0; j<Glavni_prozor.radnici.get_radnike().get(red_br).get_trenutna_naredba_r().size(); j++)
+						Glavni_prozor.radnici.get_radnike().get(red_br).get_trenutna_naredba_r().get(j).set_naredba_izvrsena(true);
+
+				
+			}
+		});
 	}
 }
+

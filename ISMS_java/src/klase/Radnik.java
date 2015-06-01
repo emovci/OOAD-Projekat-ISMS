@@ -3,7 +3,7 @@ import java.util.*;
 public class Radnik extends Generalisani_radnik 
 {
 
-	private Vector <Naredba_za_radnika> trenutna_naredba =new Vector <Naredba_za_radnika> ();
+	private Vector <Naredba_za_radnika> trenutna_naredba = new Vector <Naredba_za_radnika> ();
 	
 	public Radnik (String ime, String prezime, Datum datum_rodjenja, boolean status, int id, double plata_dnevnica, Vector <Naredba_za_radnika> trenutna_naredba )
 	{
@@ -29,11 +29,17 @@ public class Radnik extends Generalisani_radnik
 		
 	}
 	
-	public Vector <Naredba_za_radnika> get_trenutna_naredba() 
+	public Vector <Naredba_za_radnika> get_trenutna_naredba_r() 
 	{
 			return this.trenutna_naredba;
 	}
 
+	public Vector <Naredba_za_vozaca> get_trenutna_naredba() 
+	{
+			return null;
+	}
+
+	
 	public void set_trenutna_naredba(Vector <Naredba_za_radnika> nove_naredbe) 
 	{
 			this.trenutna_naredba=nove_naredbe;
